@@ -1,0 +1,28 @@
+======================================================================
+AUDIT SECURITY RISK ANALYSIS REPORT
+======================================================================
+
+## Executive Summary
+Analyzed 1000 audit records. Target: RiskLevel, class balance: 0=339, 1=661.
+Data quality: 98.6/100
+
+## Benford's Law -- Digital Forensics
+Column: AuditID, chi^2=399.64, p=0.000000, result: FAIL
+
+## Anomaly Detection
+33 records flagged as anomalies by both methods.
+
+## Machine Learning Models
+Best model: XGBClassifier, AUC=0.8265, optimal threshold: 0.52, F1: 0.8310
+
+## Top Risk Factors
+  * AuditScore
+  * PaymentGatewaySecurity_Low
+  * AuditStatus_In Progress
+  * AuditStatus_Pending
+  * Variance
+
+## Recommendations
+  * Investigate records flagged by both anomaly methods.
+  * Review Benford-nonconforming data segments.
+  * Prioritize high-risk predictions for manual audit.

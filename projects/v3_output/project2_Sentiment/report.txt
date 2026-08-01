@@ -1,0 +1,35 @@
+PROJECT 2: TWITTER SENTIMENT ANALYSIS REPORT
+============================================
+Total sampled Tweets: 200,000
+Class Distribution: Negative=100000 | Positive=100000
+
+Model Performance Metrics:
+  AUC-ROC: 0.8112
+  Average Precision: 0.7992
+
+Classification Report:
+              precision    recall  f1-score   support
+
+    Negative       0.79      0.64      0.71     19993
+    Positive       0.70      0.83      0.76     20007
+
+    accuracy                           0.73     40000
+   macro avg       0.74      0.73      0.73     40000
+weighted avg       0.74      0.73      0.73     40000
+
+Top 15 Most Important Words (LightGBM Importance):
+  1. 'just': 187.0000
+  2. 'work': 109.0000
+  3. 'lol': 104.0000
+  4. 'good': 104.0000
+  5. 'day': 98.0000
+  6. 'don': 79.0000
+  7. 'love': 75.0000
+  8. 'going': 73.0000
+  9. 'im': 72.0000
+  10. 'miss': 67.0000
+  11. 'like': 67.0000
+  12. 'haha': 66.0000
+  13. 'http': 63.0000
+  14. 'time': 63.0000
+  15. 'sorry': 61.0000

@@ -1,0 +1,17 @@
+HR ATTRITION ANALYSIS - EXECUTIVE SUMMARY (EN)
+==================================================
+
+Dataset: 1,470 employees, 16.1% attrition rate.
+
+Key Findings:
+  . Overtime is strongly associated with attrition. Bayesian A/B test: overtime employees have 10.4% attrition vs 30.5% for non-overtime.
+  . Log-rank test p=0.0000: significant survival difference by overtime status.
+  . Best model: Logistic Regression (L1) (AUC-ROC=0.805, AUC-PR=0.579).
+  . Optimal decision threshold: 0.05 (minimizes cost at $-1,230,000).
+  . Top drivers: Overtime, Job Satisfaction, Environment Satisfaction, Work-Life Balance, tenure.
+
+Recommendations:
+  1. Review overtime policies and their impact on retention.
+  2. Improve work-life balance policies and environment satisfaction.
+  3. Target retention programs at early-tenure employees.
+  4. Monitor compensation equity across roles.

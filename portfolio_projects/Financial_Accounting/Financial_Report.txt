@@ -1,0 +1,32 @@
+
+=====================================================================
+  FINANCIAL ACCOUNTING — ADVANCED ANALYTICS REPORT
+=====================================================================
+
+BENFORD'S LAW:
+  • Chi² = 78422.1, p = 0.000000
+  • ANOMALOUS — investigate further
+
+NETWORK ANALYSIS:
+  • Highly connected accounts identified (centrality measures)
+  • Gatekeeper accounts flagged (high betweenness)
+
+MARKOV CHAIN:
+  • Top category transitions modeled
+  • Stable vs volatile transaction sequences identified
+
+CUSUM CHANGE DETECTION:
+  • None
+
+ANOMALY DETECTION (IsolationForest):
+  • 2000 / 100,000 flagged (2.00%)
+
+SEGMENTATION:
+  • 7 clusters (Silhouette=0.1231)
+  • PCA captures 50.9% in 2D
+
+TEMPORAL PATTERNS:
+  • Weekday vs Weekend: not significant
+  • Day-of-week effects clear from volume profiles
+
+=====================================================================

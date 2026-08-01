@@ -1,0 +1,62 @@
+Forex Exchange Rates -- Comprehensive Analysis Report
+======================================================================
+
+Data Overview
+-------------
+* Rows: 5,216
+* Currency pairs: 22
+* Date range: 2000-01-04 -> 2019-12-31
+* Source: Forex 20-Year Daily Rates
+
+Exploratory Data Analysis
+--------------------------
+* Price history plotted for EUR/USD and GBP/USD (01_prices.png)
+* Correlation heatmap for all currency pairs (02_corr.png)
+* Return distributions with Q-Q plots (03_returns.png)
+* Outlier detection (1.5xIQR):
+  - EURO AREA - EURO/US$: 235 outliers (4.5%)
+  - UNITED KINGDOM - UNITED KINGDO: 173 outliers (3.3%)
+  - JAPAN - YEN/US$: 227 outliers (4.4%)
+
+Statistical Analysis
+--------------------
+* Augmented Dickey-Fuller: all prices non-stationary; all returns stationary
+* Engle-Granger Cointegration:
+  - EUR/USD vs GBP/USD: t=-1.6636, p=0.6933
+  - Not detected
+* Jarque-Bera Normality Test:
+  - EURO AREA - EURO/US$: JB=1429.6, p=3.77e-311 -> non-normal
+  - UNITED KINGDOM - UNITED KINGDOM POU: JB=38015.9, p=0.00e+00 -> non-normal
+  - JAPAN - YEN/US$: JB=4180.2, p=0.00e+00 -> non-normal
+* Bayesian Change-Point Detection:
+  - Points detected: 8
+  - Dates: 2019-03-11, 2016-03-17, 2016-06-28, 2019-07-23, 2017-05-31, 2015-08-19, 2015-05-26, 2015-03-09
+
+Volatility Modeling
+-------------------
+* Model: GARCH(1,1)
+* Annualized vol (mean): 0.0912 (9.12%)
+* Peak conditional vol:  0.0139
+
+Trading Strategy Backtest
+-------------------------
+* Strategy: SMA 50/200 crossover on EUR/USD
+* Total return: -1.79%
+* Annualized return: -0.09%
+* Sharpe ratio (annualized): 0.04
+* Maximum drawdown: 30.54%
+* Buy-&-hold return: -22.69%
+* Transaction cost: 0.0005 per leg
+
+Charts Generated
+----------------
+1. 01_prices.png -- EUR/USD & GBP/USD price history
+2. 02_corr.png -- Cross-currency correlation heatmap
+3. 03_returns.png -- Return distributions + Q-Q
+4. 04_cointegration.png -- Cointegration spread
+5. 05_volatility.png -- Conditional / rolling volatility
+6. 06_signals.png -- Trading signals with shaded regions
+7. 07_equity.png -- Equity curve vs buy-&-hold
+8. 08_drawdown.png -- Strategy drawdown
+
+Analysis timeframe: 2000-01-04 -> 2019-12-31

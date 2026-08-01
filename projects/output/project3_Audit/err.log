@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "D:\download\protfolio\projects\project3_audit.py", line 27, in <module>
+    audit_data = pd.read_json(result.stdout)
+  File "D:\anaconda\Lib\site-packages\pandas\io\json\_json.py", line 815, in read_json
+    return json_reader.read()
+           ~~~~~~~~~~~~~~~~^^
+  File "D:\anaconda\Lib\site-packages\pandas\io\json\_json.py", line 1014, in read
+    obj = self._get_object_parser(self.data)
+  File "D:\anaconda\Lib\site-packages\pandas\io\json\_json.py", line 1040, in _get_object_parser
+    obj = FrameParser(json, **kwargs).parse()
+  File "D:\anaconda\Lib\site-packages\pandas\io\json\_json.py", line 1176, in parse
+    self._parse()
+    ~~~~~~~~~~~^^
+  File "D:\anaconda\Lib\site-packages\pandas\io\json\_json.py", line 1392, in _parse
+    ujson_loads(json, precise_float=self.precise_float), dtype=None
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Expected object or value

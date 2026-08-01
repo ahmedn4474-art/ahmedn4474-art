@@ -1,0 +1,189 @@
+================================================================================
+  PROJECT 1: HR EMPLOYEE ATTRITION ANALYSIS
+  ØªØ­Ù„ÙŠÙ„ Ø§Ø³ØªÙ‚Ø§Ù„Ø§Øª Ø§Ù„Ù…ÙˆØ¸ÙÙŠÙ†
+================================================================================
+
+------------------------------------------------------------
+  1. FREQUENCY STATISTICS / Ø§Ù„Ø¥Ø­ØµØ§Ø¡ Ø§Ù„ØªÙƒØ±Ø§Ø±ÙŠ
+------------------------------------------------------------
+
+Attrition:
+  No                            :  1233 (83.9%)
+  Yes                           :   237 (16.1%)
+
+Gender:
+  Male                          :   882 (60.0%)
+  Female                        :   588 (40.0%)
+
+Department:
+  Research & Development        :   961 (65.4%)
+  Sales                         :   446 (30.3%)
+  Human Resources               :    63 (4.3%)
+
+JobRole:
+  Sales Executive               :   326 (22.2%)
+  Research Scientist            :   292 (19.9%)
+  Laboratory Technician         :   259 (17.6%)
+  Manufacturing Director        :   145 (9.9%)
+  Healthcare Representative     :   131 (8.9%)
+  Manager                       :   102 (6.9%)
+  Sales Representative          :    83 (5.6%)
+  Research Director             :    80 (5.4%)
+  Human Resources               :    52 (3.5%)
+
+MaritalStatus:
+  Married                       :   673 (45.8%)
+  Single                        :   470 (32.0%)
+  Divorced                      :   327 (22.2%)
+
+OverTime:
+  No                            :  1054 (71.7%)
+  Yes                           :   416 (28.3%)
+
+BusinessTravel:
+  Travel_Rarely                 :  1043 (71.0%)
+  Travel_Frequently             :   277 (18.8%)
+  Non-Travel                    :   150 (10.2%)
+
+Binned Variables:
+  Age 18-25: 115
+  Age 26-35: 606
+  Age 36-45: 468
+  Age 46-55: 226
+  Age 56-65: 47
+
+  Income <3K: 395
+  Income 3K-6K: 519
+  Income 6K-10K: 275
+  Income 10K-15K: 148
+  Income 15K+: 133
+
+  Tenure <2yr: 298
+  Tenure 2-5yr: 434
+  Tenure 5-10yr: 448
+  Tenure 10-20yr: 180
+  Tenure 20+yr: 66
+
+Descriptive Stats (Numeric):
+           Age  MonthlyIncome  YearsAtCompany  DistanceFromHome  PercentSalaryHike  TotalWorkingYears
+count  1470.00        1470.00         1470.00           1470.00            1470.00            1470.00
+mean     36.92        6502.93            7.01              9.19              15.21              11.28
+std       9.14        4707.96            6.13              8.11               3.66               7.78
+min      18.00        1009.00            0.00              1.00              11.00               0.00
+25%      30.00        2911.00            3.00              2.00              12.00               6.00
+50%      36.00        4919.00            5.00              7.00              14.00              10.00
+75%      43.00        8379.00            9.00             14.00              18.00              15.00
+max      60.00       19999.00           40.00             29.00              25.00              40.00
+
+------------------------------------------------------------
+  2. A/B HYPOTHESIS TESTING / Ø§Ø®ØªØ¨Ø§Ø± Ø§Ù„ÙØ±Ø¶ÙŠØ§Øª
+------------------------------------------------------------
+
+OverTime vs Attrition:
+Attrition   No  Yes
+OverTime           
+No         944  110
+Yes        289  127
+  chi2=87.56, p=0.000000 [*** SIGNIFICANT]
+
+Gender vs Attrition:
+Attrition   No  Yes
+Gender             
+Female     501   87
+Male       732  150
+  chi2=1.12, p=0.290572 [ns]
+
+Department vs Attrition:
+Attrition                No  Yes
+Department                      
+Human Resources          51   12
+Research & Development  828  133
+Sales                   354   92
+  chi2=10.80, p=0.004526 [** SIGNIFICANT]
+
+BusinessTravel vs Attrition:
+Attrition           No  Yes
+BusinessTravel             
+Non-Travel         138   12
+Travel_Frequently  208   69
+Travel_Rarely      887  156
+  chi2=24.18, p=0.000006 [*** SIGNIFICANT]
+
+MaritalStatus vs Attrition:
+Attrition       No  Yes
+MaritalStatus          
+Divorced       294   33
+Married        589   84
+Single         350  120
+  chi2=46.16, p=0.000000 [*** SIGNIFICANT]
+
+T-Test: MonthlyIncome by Attrition
+  Yes: 4787.09 | No: 6832.74
+  t=-6.204, p=0.000000 [***]
+
+T-Test: YearsAtCompany by Attrition
+  Yes: 5.13 | No: 7.37
+  t=-5.196, p=0.000000 [***]
+
+T-Test: Age by Attrition
+  Yes: 33.61 | No: 37.56
+  t=-6.179, p=0.000000 [***]
+
+T-Test: DistanceFromHome by Attrition
+  Yes: 10.63 | No: 8.92
+  t=2.995, p=0.002793 [**]
+
+ANOVA: JobSatisfaction by Attrition
+  Yes: 2.47 | No: 2.78
+  F=15.89, p=0.000070 [***]
+
+ANOVA: WorkLifeBalance by Attrition
+  Yes: 2.66 | No: 2.78
+  F=6.03, p=0.014211 [*]
+
+ANOVA: EnvironmentSatisfaction by Attrition
+  Yes: 2.46 | No: 2.77
+  F=15.86, p=0.000072 [***]
+
+ANOVA: JobInvolvement by Attrition
+  Yes: 2.52 | No: 2.77
+  F=25.24, p=0.000001 [***]
+
+------------------------------------------------------------
+  3. BAYESIAN ANALYSIS / Ø§Ù„ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ø¨ÙŠØ²ÙŠ
+------------------------------------------------------------
+
+Overall Attrition: Beta(238,1234)
+  Mean: 16.17%
+  95% CI: [14.33%, 18.09%]
+
+Bayesian A/B: OverTime
+  OT=Yes: Beta(128,290) mean=30.62% [26.30-35.12]
+  OT=No: Beta(111,945) mean=10.51% [8.73-12.43]
+  P(OT=Yes > OT=No) = 100.00%
+  Relative Risk posterior: mean=1.00 | 95% CI: [1.00, 1.00]
+
+Bayesian by Department:
+  Sales                    : 20.8% [17.1%-24.6%]
+  Research & Development   : 13.9% [11.8%-16.2%]
+  Human Resources          : 20.0% [11.3%-30.5%]
+  Risk Ranking:
+    #1 Sales                     20.8%
+    #2 Human Resources           20.0%
+    #3 Research & Development    13.9%
+
+Bayesian by MaritalStatus:
+  Single         : 120/ 470 -> 25.6% [21.8%-29.7%]
+  Married        :  84/ 673 -> 12.6% [10.2%-15.2%]
+  Divorced       :  33/ 327 -> 10.3% [7.3%-13.8%]
+
+Bayesian by BusinessTravel:
+  Travel_Rarely            : 156/1043 -> 15.0% [12.9%-17.3%]
+  Travel_Frequently        :  69/ 277 -> 25.1% [20.2%-30.3%]
+  Non-Travel               :  12/ 150 -> 8.6% [4.7%-13.5%]
+
+------------------------------------------------------------
+  4. VISUALIZATIONS / Ø§Ù„Ø±Ø³ÙˆÙ… Ø§Ù„Ø¨ÙŠØ§Ù†ÙŠØ©
+------------------------------------------------------------
+  [OK] HR_Project_Analysis.png
+  [OK] HR_Correlation.png

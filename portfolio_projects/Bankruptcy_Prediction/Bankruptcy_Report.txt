@@ -1,0 +1,30 @@
+
+=====================================================================
+  BANKRUPTCY PREDICTION — ADVANCED ANALYTICS REPORT
+=====================================================================
+
+IMBALANCE TREATMENT: SMOTE-Tomek
+  • Original: 6,599 healthy / 220 bankrupt
+  • Resampled: 6,597 / 6,597
+
+COST-SENSITIVE THRESHOLD: 0.42
+  • Cost: FN=$5, FP=$1
+  • Predicted cost savings vs default threshold: significant
+
+XGBOOST PERFORMANCE:
+  • AUC = 0.9986
+  • Average Precision = 0.9985
+  • Brier Score = 0.0129
+
+CONFUSION MATRIX (threshold=0.42):
+  • True Negatives: 1,911
+  • False Positives: 69
+  • False Negatives: 2
+  • True Positives: 1,977
+
+TOP 3 BANKRUPTCY INDICATORS:
+  1. Continuous interest rate (after tax)
+  2. Net worth/Assets
+  3. Non-industry income and expenditure/revenue
+
+=====================================================================

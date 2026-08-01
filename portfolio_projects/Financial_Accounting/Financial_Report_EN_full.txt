@@ -1,0 +1,121 @@
+FINANCIAL ACCOUNTING REPORT — FULL ANALYSIS
+============================================
+Generated: 2026-06-23 17:14
+
+1. DATA OVERVIEW
+   Dataset: 100,000 transactions
+   Period: 2023-01-01 to 2023-12-28
+   Accounts: 4 unique
+   Categories: 4 unique
+   Transaction Types: 4
+   Payment Methods: 4
+   Customers/Vendors: 100
+   Missing Values: 0
+
+2. TRANSACTION STATISTICS
+   Total Volume: $60,774,737
+   Average Amount: $607.75
+   Median Amount: $634.08
+   Standard Deviation: $254.91
+   Minimum: $3.88
+   Maximum: $999.99
+   Q1: $401.64  |  Q3: $829.99  |  IQR: $428.35
+
+   Distribution by Category:
+     Asset: $15,270,031 (25.1%)
+     Revenue: $15,268,361 (25.1%)
+     Expense: $15,163,910 (25.0%)
+     Liability: $15,072,435 (24.8%)
+
+3. MONTHLY ANALYSIS
+   Month-over-Month Growth:
+     Month 1 → 2: -0.89%
+     Month 2 → 3: +0.38%
+     Month 3 → 4: -0.89%
+     Month 4 → 5: +0.89%
+     Month 5 → 6: +1.63%
+     Month 6 → 7: -0.59%
+     Month 7 → 8: -0.73%
+     Month 8 → 9: -2.17%
+     Month 9 → 10: +0.86%
+     Month 10 → 11: +0.65%
+     Month 11 → 12: -0.29%
+
+   Busiest Month: Month 6 ($5,154,771)
+
+4. DAY-OF-WEEK ANALYSIS
+     Monday: 14,178 txns, $8,626,922 total, $608.47 avg
+     Tuesday: 13,929 txns, $8,447,666 total, $606.48 avg
+     Wednesday: 14,375 txns, $8,760,532 total, $609.43 avg
+     Thursday: 14,374 txns, $8,741,399 total, $608.14 avg
+     Friday: 14,366 txns, $8,734,120 total, $607.97 avg
+     Saturday: 14,388 txns, $8,728,266 total, $606.64 avg
+     Sunday: 14,390 txns, $8,735,831 total, $607.08 avg
+
+   ANOVA (Amount ~ DayOfWeek): F=0.25, p=0.959322
+   Interpretation: No significant differences
+
+5. CASH FLOW & TIME SERIES
+   Daily Net Cash Flow: Mean=$-257, Std=$10,571
+   Days Net Inflow: 158  |  Days Net Outflow: 178
+
+   CUSUM Breakpoints: 62 detected
+
+   Seasonal Decomposition (7-day period):
+     Trend component:  28.3% of variance
+     Seasonal:         0.4%
+     Residual:         62.2%
+
+   30-Day Forecast: $141,635 average daily volume
+   Projected Monthly Volume: $4,249,051
+
+6. PATTERN ANALYSIS
+   Pareto (Customers): Top 20% = 20.9% of total volume
+   Category Concentration: Top 1 = Asset (25.1%)
+
+   Payment Method Preference by Category:
+     Asset: Bank Transfer: 24.5% | Cash: 25.0% | Check: 25.2% | Credit Card: 25.3%
+     Expense: Bank Transfer: 24.9% | Cash: 24.6% | Check: 25.4% | Credit Card: 25.1%
+     Liability: Bank Transfer: 25.4% | Cash: 25.1% | Check: 25.1% | Credit Card: 24.5%
+     Revenue: Bank Transfer: 25.2% | Cash: 24.9% | Check: 25.2% | Credit Card: 24.7%
+
+   Transaction Patterns:
+     Recurring: 75,877 (75.9%)
+     One-Time:  24,123 (24.1%)
+
+7. ANOMALY DETECTION
+   IQR Method:      0 (0.00%)
+   Z-Score (|z|>3): 0 (0.00%)
+   Day-of-Week:     0 transactions
+   Total Flagged:   0 (0.00%)
+
+   Outliers by Category:
+     No significant outliers detected
+
+8. CHARTS GENERATED
+     charts/01_benford.png
+     charts/01_eda.png
+     charts/01_eda_overview.png
+     charts/02_anomalies.png
+     charts/02_benford.png
+     charts/02_monthly_cash_flow.png
+     charts/02_network.png
+     charts/03_cusum.png
+     charts/03_markov.png
+     charts/03_patterns.png
+     charts/03_top_customers.png
+     charts/04_cusum.png
+     charts/04_daily_net_cash_flow.png
+     charts/04_markov.png
+     charts/05_clusters.png
+     charts/05_decomposition.png
+     charts/06_cusum.png
+     charts/06_patterns.png
+     charts/07_equity.png
+     charts/07_forecast.png
+     charts/08_pareto.png
+     charts/09_payment_by_category.png
+     charts/10_outliers.png
+     charts/11_day_of_week.png
+     charts/12_recurring_vs_onetime.png
+     charts/Dashboard.png

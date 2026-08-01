@@ -1,0 +1,11 @@
+# Exclude raw datasets over 50MB
+*.zip
+*.csv
+archive (1)/*
+archive (1).zip
+portfolio_projects/Twitter_Sentiment_Analysis/data/*.csv
+
+# Python byte code & cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

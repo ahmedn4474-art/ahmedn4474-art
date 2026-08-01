@@ -1,0 +1,38 @@
+PROJECT 8: CREDIT CARD FRAUD DETECTION REPORT
+=============================================
+Total Transactions analyzed: 100,000
+Fraudulent Transactions: 500 (0.500%)
+Valid Transactions: 99500 (99.500%)
+
+Model Performance Metrics:
+  AUC-ROC: 0.9761
+  Average Precision: 0.3591
+
+Unsupervised Anomaly Detection:
+  Isolation Forest Precision on Train: 0.0054
+
+Supervised Classifier Report (Cost-Sensitive Random Forest):
+              precision    recall  f1-score   support
+
+       Valid       1.00      0.97      0.99     19900
+       Fraud       0.12      0.73      0.21       100
+
+    accuracy                           0.97     20000
+   macro avg       0.56      0.85      0.60     20000
+weighted avg       0.99      0.97      0.98     20000
+
+Confusion Matrix:
+  True Negatives (Valid caught):  19374  |  False Positives (False Alarms):    526
+  False Negatives (Frauds missed):   27  |  True Positives (Frauds caught):      73
+
+Top 10 Risk Indicators:
+  22. V22: 0.2447
+  10. V10: 0.1484
+  8. V8: 0.1464
+  1. V1: 0.1165
+  4. V4: 0.0819
+  30. Time: 0.0559
+  16. V16: 0.0532
+  23. V23: 0.0087
+  12. V12: 0.0083
+  9. V9: 0.0079

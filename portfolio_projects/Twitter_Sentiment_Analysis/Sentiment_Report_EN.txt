@@ -1,0 +1,29 @@
+======================================================================
+TWITTER SENTIMENT -- 6-Skills Integrated Report
+======================================================================
+
+### Executive Summary
+1,600,000 tweets. Sample: 50,000. Best model: LogisticReg (AUC=0.8342). Trading strategy: return -100.0% vs buy-hold -10.7%.
+
+### Data Quality
+Score: 100.0/100. Balanced: 50.0% positive.
+
+### Topics (LDA)
+Topic 1: ill, right, just, like, im
+Topic 2: didnt, day, bad, thanks, going
+Topic 3: happy, just, today, day, work
+Topic 4: new, home, im, time, got
+Topic 5: know, lol, dont, love, good
+
+### Discriminative Words
+sad
+thanks
+miss
+love
+good
+
+### Best Model
+LogisticReg: AUC=0.8342, F1=0.7713
+
+### Trading Strategy
+Return: -100.0%. Sharpe: -1.81. MaxDD: 100.0%

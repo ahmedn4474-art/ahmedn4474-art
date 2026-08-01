@@ -1,0 +1,33 @@
+========================================
+BANKRUPTCY PREDICTION — Executive Summary
+========================================
+Generated: 2026-06-23 17:25
+
+DATASET:
+  Total firms: 6,819
+  Bankrupt: 220 (3.23%)
+  Features: 94
+
+BEST MODEL: Random Forest
+  F1 Score: 0.4531
+  ROC AUC: 0.9345
+  Recall (Sensitivity): 0.5273
+  Precision: 0.3973
+  Specificity: 0.9733
+  MCC: 0.4369
+
+CROSS-VALIDATION (5-Fold):
+  F1: 0.4144 +/- 0.0363
+  ROC AUC: 0.9269 +/- 0.0263
+
+OPTIMAL THRESHOLD: 0.3930
+
+TOP PREDICTORS (by statistical significance):
+  1.  Net Value Per Share (B)
+  2.  Net Value Per Share (A)
+  3.  Net Value Per Share (C)
+
+RECOMMENDATION:
+  The Random Forest model achieves strong discriminatory power
+  for bankruptcy prediction. Use threshold=0.393 to balance
+  precision and recall for your specific cost structure.

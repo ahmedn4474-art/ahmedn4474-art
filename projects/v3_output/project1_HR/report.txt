@@ -1,0 +1,31 @@
+PROJECT 1: HR EMPLOYEE ATTRITION PREDICTION REPORT
+==================================================
+Total Employees: 1,470
+Baseline Attrition Rate: 16.12%
+Class Distribution: Stay=1233 | Leave=237
+
+Model Performance Metrics:
+  AUC-ROC: 0.8146
+  Average Precision: 0.4767
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        Stay       0.88      0.94      0.91       247
+       Leave       0.48      0.32      0.38        47
+
+    accuracy                           0.84       294
+   macro avg       0.68      0.63      0.65       294
+weighted avg       0.82      0.84      0.82       294
+
+Top 10 Feature Importances:
+  1. JobLevel: 0.1654
+  2. OverTime: 0.1231
+  3. StockOptionLevel: 0.0771
+  4. YearsWithCurrManager: 0.0636
+  5. MaritalStatus: 0.0545
+  6. Department: 0.0467
+  7. JobSatisfaction: 0.0354
+  8. EnvironmentSatisfaction: 0.0318
+  9. WorkLifeBalance: 0.0246
+  10. JobInvolvement: 0.0244

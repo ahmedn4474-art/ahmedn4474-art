@@ -1,0 +1,118 @@
+================================================================================
+  PROJECT 4: FINANCIAL ACCOUNTING
+  ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ù‚ÙŠÙˆØ¯ Ø§Ù„Ù…Ø­Ø§Ø³Ø¨ÙŠØ©
+================================================================================
+
+  Total transactions: 100,000
+  Period: 2023-01-01 to 2023-12-28
+
+------------------------------------------------------------
+  1. FREQUENCY STATISTICS
+------------------------------------------------------------
+
+Account:
+  Accounts Payable    :  25,104 (25.1%)
+  Inventory           :  25,054 (25.1%)
+  Accounts Receivable :  25,038 (25.0%)
+  Cash                :  24,804 (24.8%)
+
+Category:
+  Revenue             :  25,160 (25.2%)
+  Asset               :  25,118 (25.1%)
+  Liability           :  24,870 (24.9%)
+  Expense             :  24,852 (24.9%)
+
+Transaction_Type:
+  Sale                :  25,040 (25.0%)
+  Purchase            :  25,022 (25.0%)
+  Expense             :  24,985 (25.0%)
+  Transfer            :  24,953 (25.0%)
+
+Payment_Method:
+  Check               :  25,131 (25.1%)
+  Bank Transfer       :  25,069 (25.1%)
+  Cash                :  24,949 (24.9%)
+  Credit Card         :  24,851 (24.9%)
+
+Monthly distribution:
+  June      :  8,424
+  July      :  8,420
+  January   :  8,402
+  March     :  8,400
+  May       :  8,345
+  August    :  8,343
+  February  :  8,330
+  April     :  8,313
+  October   :  8,298
+  December  :  8,266
+  November  :  8,254
+  September :  8,205
+
+Weekday distribution:
+  Sunday    : 14,390
+  Saturday  : 14,388
+  Wednesday : 14,375
+  Thursday  : 14,374
+  Friday    : 14,366
+  Monday    : 14,178
+  Tuesday   : 13,929
+
+Descriptive Stats (Debit/Credit):
+           Debit     Credit
+count  100000.00  100000.00
+mean      607.75     607.75
+std       254.91     254.91
+min         3.88       3.88
+25%       401.64     401.64
+50%       634.08     634.08
+75%       829.99     829.99
+max       999.99     999.99
+
+------------------------------------------------------------
+  2. A/B TESTING
+------------------------------------------------------------
+
+T-Test: Debit by Transaction Type (Sale vs Purchase)
+  Sale mean: 547.36 | Purchase mean: 547.55
+  t=-0.080, p=0.936491 ns
+
+ANOVA: Debit by Category
+  Asset     : mean=607.93
+  Revenue   : mean=606.85
+  Expense   : mean=610.17
+  Liability : mean=606.05
+  F=1.22, p=0.299259 ns
+
+Chi-Square: Account vs Payment Method
+  chi2=5.61, p=0.777964 ns
+
+Chi-Square: Category vs Transaction Type
+  chi2=5.40, p=0.798070 ns
+
+------------------------------------------------------------
+  3. BAYESIAN ANALYSIS
+------------------------------------------------------------
+
+Bayesian: Average Debit Amount
+  Mean Debit: 607.75
+  Std Debit: 254.91
+  95% CI (Normal approx): [606.17, 609.33]
+
+Bayesian: Prop. of Cash Transactions
+  Cash: 24949/100000
+  Posterior: Beta(24950,75052) -> 24.95%
+  95% CI: [24.68%, 25.22%]
+
+Bayesian: Category Distribution
+  Asset     :  25118/100000 -> 25.1% [24.9%-25.4%]
+  Revenue   :  25160/100000 -> 25.2% [24.9%-25.4%]
+  Expense   :  24852/100000 -> 24.9% [24.6%-25.1%]
+  Liability :  24870/100000 -> 24.9% [24.6%-25.1%]
+
+------------------------------------------------------------
+  4. VISUALIZATIONS
+------------------------------------------------------------
+  [OK] Financial_Project.png
+  [OK] Monthly_Heatmap.png
+
+PROJECT 4 COMPLETE -> D:\download\protfolio\projects\output\project4_Financial\report.txt

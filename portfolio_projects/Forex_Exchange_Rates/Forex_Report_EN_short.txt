@@ -1,0 +1,12 @@
+Forex Exchange Rates -- Executive Summary
+=====================================================================
+Period: 2000-01-04 -> 2019-12-31
+Rows: 5,216  |  Pairs: 22
+
+* Prices are non-stationary (ADF: 1/22 stationary); returns are stationary
+* Cointegration EUR/USD vs GBP/USD: Not detected (p=0.6933)
+* Jarque-Bera: all returns non-normal (p<0.001)
+* Bayesian change points: 8 detected
+* Volatility model: GARCH(1,1)
+* SMA 50/200 strategy: return -1.79%, Sharpe 0.04, max DD 30.54%
+* vs Buy-&-hold: -22.69%

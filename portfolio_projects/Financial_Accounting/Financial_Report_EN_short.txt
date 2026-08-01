@@ -1,0 +1,21 @@
+FINANCIAL ACCOUNTING REPORT — SHORT SUMMARY
+============================================
+Period:         2023-01-01 to 2023-12-28
+Transactions:   100,000
+Total Volume:   $60,774,737
+Avg Amount:     $607.75
+Median Amount:  $634.08
+Std Deviation:  $254.91
+
+Top Category:      Asset ($15,270,031)
+Top Payment:       Check (25,131 txns)
+Top Type:          Transfer
+Busiest Month:     Month 6 ($5,154,771)
+
+Weekday Avg:   $608.11
+Weekend Avg:   $606.86
+Ratio:         1.00
+
+Anomalies Flagged:   0 (0.0%)
+Top 2 Categories:    50.2% of total volume
+Recurring Txns:      75,877 (75.9%)

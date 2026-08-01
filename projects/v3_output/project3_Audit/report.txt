@@ -1,0 +1,21 @@
+PROJECT 3: AUDIT & SECURITY RISK ANALYSIS REPORT
+==============================================
+
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │                       EXECUTIVE SUMMARY                  │
+  ├─────────────────────────────────────────────────────────────────────┤
+  │                                                                     │
+  │  🎯 ADVANCED ANALYTICS DEPLOYED                                     │
+  │     • PCA & K-Means Clustering: Reduced dimensional complexity of   │
+  │       security controls, identifying 4 core profiles.            │
+  │     • Anomaly Detection (Isolation Forest): Flagged 50 high-risk  │
+  │       audits that deviate significantly from standard operational   │
+  │       norms (e.g., highly unusual Cost-Variance ratios).            │
+  │                                                                     │
+  │  📊 DELIVERABLES                                                    │
+  │     • 1x Interactive HTML Dashboard (Plotly, 3D PCA)                │
+  │     • 1x High-Resolution Static Dashboard (Violin plots, Bayesian)  │
+  │                                                                     │
+  └─────────────────────────────────────────────────────────────────────┘
+

@@ -1,0 +1,113 @@
+AUDIT SECURITY RISK ANALYSIS - FULL REPORT
+==================================================
+
+1. DATA OVERVIEW
+------------------------------
+Total Records: 1000
+Total Features: 35
+Target Variable: RiskLevel (Low / Medium / High)
+Risk Distribution: Low 339 (33.9%) | Medium 341 (34.1%) | High 320 (32.0%)
+
+Numerical Features (12):
+DataValue, Timestamp, AuditScore, Variance, Duration, ErrorRate, CompletionPercentage, AuditCost, ReviewCount, RiskFactor, PaymentProcessingSecurity, PCIDSSComplianceLevel
+
+Categorical Features (21):
+AuditType, AuditStatus, EncryptionStandard, TokenizationUsed, PaymentGatewaySecurity, WebsiteSecurity, VulnerabilityTesting, WAFInPlace, AccessControls, MalwareScanning, PatchManagement, PasswordPolicies, AccountTakeoverPrevention, SessionManagement, StockoutsRisk, OverstockingRisk, InventoryDataAccuracy, OrderAccuracy, ShippingIssues, ShippingCostAccuracy, ReturnsRefundsProcess
+
+2. EXPLORATORY DATA ANALYSIS
+------------------------------
+- The target distribution is relatively balanced with a slight skew toward Medium risk
+- Cross-tabulation of AuditType vs RiskLevel reveals which audit types are most associated with high risk
+- Correlation heatmap identifies collinearity patterns among numerical features
+- Distribution plots show how key metrics differ across risk levels
+
+3. STATISTICAL TESTS
+------------------------------
+
+Kruskal-Wallis H-test (numerical feature differences by RiskLevel):
+المتغير                   قيمة H     p-value    الدلالة 
+-----------------------------------------------------
+DataValue                 2.12       0.345964   ns      
+Timestamp                 1.99       0.370068   ns      
+AuditScore                189.01     0.000000   ***     
+Variance                  1.55       0.460581   ns      
+Duration                  1.56       0.457684   ns      
+ErrorRate                 1.92       0.382844   ns      
+CompletionPercentage      0.77       0.681875   ns      
+AuditCost                 0.09       0.955900   ns      
+ReviewCount               0.16       0.924563   ns      
+RiskFactor                1.27       0.530234   ns      
+
+Chi-square Tests (categorical associations):
+المتغير                   Chi2       p-value    Cramer V  
+-------------------------------------------------------
+AuditType                 13.79      0.087273   0.1175    
+AuditStatus               2.94       0.568418   0.0542    
+EncryptionStandard        5.38       0.250726   0.0733    
+TokenizationUsed          1.50       0.472139   0.0387    
+PaymentGatewaySecurity    3.98       0.408064   0.0631    
+WebsiteSecurity           5.81       0.213841   0.0762    
+VulnerabilityTesting      7.46       0.023961   0.0864    
+WAFInPlace                0.49       0.780753   0.0222    
+AccessControls            2.78       0.595350   0.0527    
+MalwareScanning           3.37       0.185644   0.0580    
+
+Benford's Law:
+- Variable: DataValue
+- Chi-square: 413.15
+- p-value: 0.000000
+- Verdict: DEVIATES
+
+4. ANOMALY DETECTION
+------------------------------
+- Isolation Forest: 50 anomalies (5.0%)
+- Local Outlier Factor: 50 anomalies (5.0%)
+- Consensus (both methods): 29 records (2.9%)
+
+5. MACHINE LEARNING MODELS
+------------------------------
+
+Model Comparison:
+Model                       Accuracy   F1 Macro    ROC AUC       Cost
+-----------------------------------------------------------------
+Gradient Boosting             0.6150     0.6205     0.8076        294
+Random Forest                 0.5600     0.5504     0.6917        457
+Logistic Regression           0.2900     0.2296     0.4577        658
+
+Best Model: Gradient Boosting
+Confusion Matrix (Gradient Boosting):
+                  Low   Medium     High
+  Low            39       25        4
+  Medium         23       36        9
+  High            3       13       48
+
+6. TOP RISK FACTORS
+------------------------------
+  1. AuditScore
+  2. Variance
+  3. DataValue
+  4. ErrorRate
+  5. AuditType
+
+7. COST ANALYSIS
+------------------------------
+Total misclassification costs by model:
+  Gradient Boosting: 294
+  Random Forest: 457
+  Logistic Regression: 658
+
+Cost matrix used (rows=actual, cols=predicted):
+           Low  Medium  High
+  Low        0       1      5
+  Medium     3       0      8
+  High      10       6      0
+
+8. RECOMMENDATIONS
+------------------------------
+1. Investigate consensus-anomaly records (flagged by both Isolation Forest and LOF)
+2. Strengthen cybersecurity controls for the most influential risk factors
+3. Deploy Gradient Boosting for early risk-level prediction and triage
+4. Address data quality issues in fields with missing values
+5. Review Benford-nonconforming records for potential data manipulation
+6. Conduct periodic analyses to monitor risk distribution stability
+7. Incorporate the cost matrix into ongoing model evaluation

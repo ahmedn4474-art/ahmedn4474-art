@@ -1,0 +1,7 @@
+PROJECT 4: FINANCIAL ACCOUNTING ANALYSIS REPORT
+===============================================
+Total Transactions: 100,000
+Date Range: 2023-01-01 to 2023-12-28
+Total Volume: $60,774,736.83
+Average Transaction Value: $607.75
+Anomalous Days Flagged: 11 out of 336 days

@@ -1,0 +1,30 @@
+
+=====================================================================
+  TWITTER SENTIMENT — ADVANCED NLP REPORT
+=====================================================================
+
+TOPIC MODELING (LDA, 8 topics):
+  • Topics correlate strongly with sentiment
+  • Some topics show mixed sentiment (sarcasm, ambiguity)
+
+CHI2 DISCRIMINATIVE FEATURES:
+  • Positive: thank, love, great, good, best, awesome
+  • Negative: hate, sucks, worst, boring, terrible, fail
+  • Bigrams improve discrimination over unigrams
+
+STACKING ENSEMBLE PERFORMANCE:
+  • Accuracy: 0.7502
+  • F1 Score: 0.7544
+  • AUC: 0.8321
+  • Brier Score: 0.1674
+
+LEARNING CURVES:
+  • Generalization gap: 0.0474
+  • More data would marginally improve performance
+
+ERROR ANALYSIS:
+  • 2934 TN | 1066 FP | 932 FN | 3068 TP
+  • False positives show sarcasm and complex negation
+  • Short tweets (<5 words) dominate error cases
+
+=====================================================================

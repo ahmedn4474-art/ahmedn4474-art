@@ -1,0 +1,118 @@
+=====================================================================================
+  PROJECT 6: FOREX — PROFESSIONAL EXCHANGE RATE ANALYSIS
+=====================================================================================
+
+  Loaded: 5217 rows x 24 cols
+  Columns: ['Unnamed: 0', 'Time Serie', 'AUSTRALIA - AUSTRALIAN DOLLAR/US$', 'EURO AREA - EURO/US$', 'NEW ZEALAND - NEW ZELAND DOLLAR/US$', 'UNITED KINGDOM - UNITED KINGDOM POUND/US$', 'BRAZIL - REAL/US$', 'CANADA - CANADIAN DOLLAR/US$', 'CHINA - YUAN/US$', 'HONG KONG - HONG KONG DOLLAR/US$', 'INDIA - INDIAN RUPEE/US$', 'KOREA - WON/US$', 'MEXICO - MEXICAN PESO/US$', 'SOUTH AFRICA - RAND/US$', 'SINGAPORE - SINGAPORE DOLLAR/US$', 'DENMARK - DANISH KRONE/US$', 'JAPAN - YEN/US$', 'MALAYSIA - RINGGIT/US$', 'NORWAY - NORWEGIAN KRONE/US$', 'SWEDEN - KRONA/US$', 'SRI LANKA - SRI LANKAN RUPEE/US$', 'SWITZERLAND - FRANC/US$', 'TAIWAN - NEW TAIWAN DOLLAR/US$', 'THAILAND - BAHT/US$']
+  Currency pairs: 22
+  Date range: 2000-01-03 to 2019-12-31
+
+  Primary pair for analysis: EURO AREA - EURO/US$
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  1. EXPLORATORY DATA ANALYSIS
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Exchange Rate (EURO AREA - EURO/US$):
+    Mean: 0.8441
+    Min:  0.6246
+    Max:  1.2092
+    Std:  0.1267
+
+  Daily Returns:
+    Mean: -0.0002%
+    Volatility (annualized): 4.1%
+    Positive days: 2581/5217 (49.5%)
+    Negative days: 2569/5217 (49.2%)
+  ADF Statistic: -1.6142
+  p-value: 0.475746
+  NON-STATIONARY
+  ADF on Returns: -70.5053 p=0.000000
+  STATIONARY
+
+  Top correlations with EURO AREA - EURO/US$:
+    DENMARK - DANISH KRONE/US$              : 0.9999
+    SWEDEN - KRONA/US$                      : 0.9103
+    CANADA - CANADIAN DOLLAR/US$            : 0.8998
+    AUSTRALIA - AUSTRALIAN DOLLAR/US$       : 0.8844
+    NORWAY - NORWEGIAN KRONE/US$            : 0.8650
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  2. A/B TESTING
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  T-Test: Return by Pre/Post 2020
+    Pre (mean): -0.0002% vs Post (mean): nan%
+    t=nan p=nan d=nan
+
+  F-Test: Variance pre/post 2020
+    F-ratio: nan (higher = different volatility)
+
+  First half vs Second half: t=-1.3491 p=0.177373
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  3. BAYESIAN INFERENCE
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Bayesian: P(Positive Day)
+    Posterior: Beta(2582,2636)
+    P(Up day) = 49.5%
+    95% HDI: [48.1%, 50.8%]
+
+  Bayesian: P(High Volatility Day)
+    P(High Vol) = 50.0%
+    95% HDI: [48.6%, 51.4%]
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  4. TIME SERIES DECOMPOSITION
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  Decomposed: trend + seasonal + residual
+  Residual std: 0.0279
+  Seasonal range: [0.9872, 1.0104]
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  5. TECHNICAL ANALYSIS
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  MA20/MA50 crossovers: 52 buys, 53 sells
+  Bollinger oversold signals: 0 / 5217
+  Bollinger overbought signals: 0 / 5217
+  Maximum drawdown: -48.35%
+  Current drawdown: -26.34%
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  6. PROFESSIONAL VISUALIZATIONS
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  [OK] Dashboard.png
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  7. EXECUTIVE SUMMARY
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │                      EXECUTIVE SUMMARY                              │
+  ├─────────────────────────────────────────────────────────────────────┤
+  │                                                                     │
+  │  1. OVERVIEW: 5,217 trading days of EURO AREA - EURO/US$                  │
+  │     • Current rate: 0.8907                                │
+  │     • Period: 2000-01-03 to 2019-12-31              │
+  │                                                                     │
+  │  2. RETURNS ANALYSIS:                                                │
+  │     • Mean daily return: -0.0002%                              │
+  │     • Annualized volatility: 4.1%                       │
+  │     • 2581/5217 positive days (49.5%)              │
+  │     • Max drawdown: -48.3%                                   │
+  │     • Returns are approximately normal (kurtosis: 2.57)
+  │                                                                     │
+  │  3. STATIONARITY:                                                    │
+  │     • Raw rates: NON-STATIONARY (random walk)       │
+  │     • Daily returns: STATIONARY (white noise)  │
+  │                                                                     │
+  │  4. TECHNICAL SIGNALS:                                               │
+  │     • MA20/MA50 crossover: 52 buy, 53 sell signals            │
+  │     • Bollinger Band extremes: 0 days                   │
+  │                                                                     │
+  │  5. BAYESIAN: P(Up day) = 49.5%                             │
+  │     95% HDI: [48.1%, 50.8%]                                 │
+  │                                                                     │
+  └─────────────────────────────────────────────────────────────────────┘
+

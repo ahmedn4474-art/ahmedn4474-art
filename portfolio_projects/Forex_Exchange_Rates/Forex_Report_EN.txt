@@ -1,0 +1,39 @@
+======================================================================
+Forex Exchange Rates -- Comprehensive Analysis Report
+======================================================================
+
+## Data Overview
+  * Rows: 5217, Columns: 45
+  * Date Range: 2000-01-03 to 2019-12-31
+  * Currency Pairs: 22
+
+## Exploratory Data Analysis
+  * EUR/USD & GBP/USD -- 5216 days of prices
+  * Correlation heatmap of all currency pairs
+  * Return distributions with outlier detection
+
+## Deep Analysis
+  * ADF test -- all prices non-stationary, returns stationary
+  * Cointegration: Not detected (p=0.6731)
+  * Jarque-Bera -- all returns non-normal
+  * Bayesian change points detected: 0
+
+## Volatility Modeling (GARCH)
+  * GARCH(1,1) model estimated successfully
+  * Volatility clustering observed
+
+## Trading Strategy (SMA Crossover)
+  * Total Return: -11.93%
+  * Buy & Hold: -8.18%
+  * Sharpe Ratio: -0.02
+  * Max Drawdown: 43.99%
+
+### Charts Generated
+  * 01_prices.png
+  * 02_corr.png
+  * 03_returns.png
+  * 04_adf.png
+  * 05_garch.png
+  * 06_signals.png
+  * 07_equity.png
+  * 08_drawdown.png

@@ -1,0 +1,88 @@
+========================================
+BANKRUPTCY PREDICTION — Full Analytical Report
+========================================
+Generated: 2026-06-23 17:25
+
+1. DATA OVERVIEW
+   Dataset: 6,819 firms with 94 financial ratios
+   Target: Bankrupt? (1=bankrupt, 0=healthy)
+   Class Distribution:
+     - Healthy: 6,599 firms (96.77%)
+     - Bankrupt: 220 firms (3.23%)
+     - Imbalance Ratio: 30.0:1
+
+2. EXPLORATORY DATA ANALYSIS
+   PCA: The first 3 principal components capture the majority of variance
+   in the financial ratio space. The 2D/3D projections show partial
+   separability between bankrupt and healthy firms, indicating that
+   financial ratios contain predictive signals for bankruptcy.
+
+3. STATISTICAL ANALYSIS
+   A total of 60 out of 94 features show
+   statistically significant differences between bankrupt and healthy firms
+   (Welch's t-test, p<0.05).
+
+   Top 10 Most Discriminating Features:
+      1.  Net Value Per Share (B)                            t= -21.989  p=2.71e-61  d=-1.136
+      2.  Net Value Per Share (A)                            t= -21.860  p=8.20e-61  d=-1.135
+      3.  Net Value Per Share (C)                            t= -21.592  p=7.53e-60  d=-1.127
+      4.  Per Share Net profit before tax (Yuan ¥)           t= -19.695  p=5.37e-52  d=-1.248
+      5.  Net worth/Assets                                   t= -19.852  p=6.74e-52  d=-1.410
+      6.  Debt ratio %                                       t= +19.852  p=6.74e-52  d=+1.410
+      7.  Persistent EPS in the Last Four Seasons            t= -19.598  p=2.17e-51  d=-1.308
+      8.  Net profit before tax/Paid-in capital              t= -19.456  p=4.53e-51  d=-1.264
+      9.  Operating profit/Paid-in capital                   t= -17.925  p=3.82e-47  d=-0.954
+     10.  Operating Profit Per Share (Yuan ¥)                t= -17.841  p=8.48e-47  d=-0.957
+
+4. MODEL PERFORMANCE
+   Models compared: Random Forest, XGBoost, RF + SMOTE, Logistic Regression
+
+   Performance Summary:
+     Random Forest              F1=0.4531  AUC=0.9345  Recall=0.5273  Prec=0.3973  MCC=0.4369
+     XGBoost                    F1=0.4381  AUC=0.9351  Recall=0.4182  Prec=0.4600  MCC=0.4208
+     RF + SMOTE                 F1=0.4130  AUC=0.9352  Recall=0.6909  Prec=0.2946  MCC=0.4248
+     Logistic Regression        F1=0.2983  AUC=0.9024  Recall=0.8000  Prec=0.1833  MCC=0.3461
+
+5. CROSS-VALIDATION (5-Fold Stratified)
+     Random Forest              F1=0.4144+/-0.0363  AUC=0.9269+/-0.0263
+     XGBoost                    F1=0.3813+/-0.0488  AUC=0.9272+/-0.0267
+     RF + SMOTE                 F1=0.3813+/-0.0170  AUC=0.9247+/-0.0214
+     Logistic Regression        F1=0.0519+/-0.0052  AUC=0.4946+/-0.0588
+
+6. BEST MODEL: Random Forest
+   - Accuracy:  0.9589
+   - Precision: 0.3973
+   - Recall:    0.5273
+   - F1 Score:  0.4531
+   - ROC AUC:   0.9345
+   - MCC:       0.4369
+   - Specificity: 0.9733
+
+7. THRESHOLD OPTIMIZATION
+   Optimal threshold for F1: 0.39301059677364475
+
+8. FEATURE IMPORTANCE
+   Top 10 Features:
+      1.  Persistent EPS in the Last Four Seasons            importance=0.0837
+      2.  Borrowing dependency                               importance=0.0735
+      3.  Debt ratio %                                       importance=0.0655
+      4.  Equity to Liability                                importance=0.0614
+      5.  Net profit before tax/Paid-in capital              importance=0.0493
+      6.  Retained Earnings to Total Assets                  importance=0.0490
+      7.  Per Share Net profit before tax (Yuan ¥)           importance=0.0470
+      8.  Net worth/Assets                                   importance=0.0461
+      9.  Net Income to Total Assets                         importance=0.0424
+     10.  Liability to Equity                                importance=0.0417
+
+9. COST-SENSITIVE ANALYSIS
+   Misclassification costs: FN (bankrupt missed) = high, FP (false alarm) = low
+   The optimal threshold varies by model and cost structure.
+   See chart: charts/13_cost_analysis.png
+
+10. CONCLUSION
+    The Random Forest model demonstrates strong performance for bankruptcy
+    prediction. Given the high cost of misclassifying a bankrupt firm,
+    we recommend using the optimized threshold (0.393) or
+    adjusting based on your specific cost-benefit trade-off.
+
+    All visualizations are saved in the charts/ directory.

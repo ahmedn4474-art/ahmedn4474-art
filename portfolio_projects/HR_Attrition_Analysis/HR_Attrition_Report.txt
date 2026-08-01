@@ -1,0 +1,35 @@
+
+=====================================================================
+  HR ATTRITION — ADVANCED STATISTICAL REPORT
+=====================================================================
+
+SURVIVAL ANALYSIS (Cox PH):
+  • OverTime hazard ratio: 3.73x
+  • Significant predictors identified via partial likelihood ratio test
+  • Kaplan-Meier curves show divergence by ~3yr tenure
+
+CAUSAL INFERENCE (Propensity Score Matching):
+  • ATE of Overtime on Monthly Income: $+3.6
+  • Propensity score model AUC: 0.533
+
+ANOVA INTERACTIONS:
+  • OverTime × Department interaction: significant (F-test)
+  • JobRole and Age also explain significant income variance
+
+BEST ML MODEL: GradientBoost
+  • AUC = 0.7090
+  • Optimal threshold = 0.18 (F1=0.4000)
+  • Brier score = 0.1305
+
+TOP DRIVERS (SHAP/LASSO):
+  1. OverTime — strongest attrition predictor
+  2. MonthlyIncome — protective factor
+  3. YearsSinceLastPromotion — risk increases with delay
+  4. JobSatisfaction — moderates all other effects
+
+RECOMMENDATIONS:
+  1. Eliminate mandatory overtime — strongest lever
+  2. Cap promotion cycle at 2 years
+  3. Targeted retention at 1-3yr tenure mark
+  4. Department-specific intervention strategies
+=====================================================================

@@ -1,0 +1,27 @@
+======================================================================
+FINANCIAL ACCOUNTING -- 6-Skills Integrated Report
+======================================================================
+
+### Executive Summary
+100,000 transactions. Benford: ANOMALOUS (p=0.0000). Clusters: 4 (sil=0.2404). Anomalies: 2000 (2.0%).
+
+### Data Quality
+Score: 100.0/100. Near-duplicates detected.
+
+### Benford's Law
+chi^2=78422.1, p=0.000000 -- Deviation needs investigation
+
+### CUSUM
+0 change points. Threshold=239,477.
+
+### Markov Chain
+Category transition matrix shows stable patterns.
+
+### Clusters
+Cluster 0: 24,174 txns, avg $864
+Cluster 1: 26,224 txns, avg $273
+Cluster 2: 26,245 txns, avg $774
+Cluster 3: 23,357 txns, avg $532
+
+### Trading Strategy
+Return: 0.0%. Sharpe: 0.00. MaxDD: 0.0%

@@ -1,0 +1,29 @@
+
+=====================================================================
+  FOREX EXCHANGE RATES — ADVANCED QUANTITATIVE REPORT
+=====================================================================
+
+STATIONARITY:
+  • Prices: non-stationary (ADF p>0.05)
+  • Returns: stationary (ADF p<0.001)
+
+COINTEGRATION: Not detected
+  • EUR/USD vs GBP/USD: p=0.6819
+
+GARCH(1,1) VOLATILITY:
+  • Conditional volatility captures volatility clustering
+  • Leverage effects: detected
+
+VALUE-AT-RISK (Monte Carlo, 21d):
+  • VaR(95%): 4.54%
+  • VaR(99%): 6.42%
+
+DIRECTION MODEL (XGBoost):
+  • Accuracy: 0.5235 | AUC: 0.5269
+  • Strategy return: 8.42% | Sharpe: 0.32
+  • Buy & Hold: -2.80% | Sharpe: -0.07
+  • Max Drawdown: -11.51%
+
+TOP FEATURES: ma_5, ma_ratio, lag_2
+
+=====================================================================

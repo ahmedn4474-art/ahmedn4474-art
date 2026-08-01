@@ -1,0 +1,186 @@
+=====================================================================================
+  PROJECT 5: BANKRUPTCY PREDICTION — PROFESSIONAL
+=====================================================================================
+
+  Companies: 6,819
+  Financial Ratios: 95
+  Target column: Bankrupt?
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  1. EXPLORATORY DATA ANALYSIS
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Bankrupt: 220 / 6819 (3.23%)
+  Non-Bankrupt: 6599 / 6819 (96.77%)
+  Imbalance ratio: 1:30.0
+
+  Top financial ratios by mean difference:
+    Fixed Assets Turnover Frequency         : B=1996602727.2745  NB=975657432.9464  Δ=1020945294.3281
+    Total Asset Growth Rate                 : B=4803016818.1818  NB=5531602816.0329  Δ=728585997.8511
+    Quick Asset Turnover Rate               : B=2640836363.6365  NB=2147829492.3477  Δ=493006871.2888
+    Research and development expense rate   : B=1605623181.8182  NB=1961922518.5636  Δ=356299336.7454
+    Cash Turnover Rate                      : B=2181732727.2728  NB=2481653241.5522  Δ=299920514.2794
+    Cash/Current Liability                  : B=254940909.0937  NB=29899530.2453  Δ=225041378.8484
+    Current Asset Turnover Rate             : B=1380154000.0006  NB=1189711557.8123  Δ=190442442.1883
+    Operating Expense Rate                  : B=1887486363.6367  NB=1998943222.6099  Δ=111456858.9733
+    Total assets to GNP price               : B=91000000.0114  NB=16216699.5085  Δ=74783300.5029
+    Net Value Growth Rate                   : B=42409090.9095  NB=204576.4517  Δ=42204514.4578
+
+  Ratio correlation with bankruptcy:
+  Top 5 positive: Current Liability to Current Assets    0.171306
+Borrowing dependency                   0.176543
+Current Liability to Assets            0.194494
+Debt ratio %                           0.250161
+Net Income Flag                             NaN
+  Top 5 negative: Net Income to Total Assets                                -0.315457
+ROA(A) before interest and % after tax                    -0.282941
+ROA(B) before interest and depreciation after tax         -0.273051
+ROA(C) before interest and depreciation before interest   -0.260807
+Net worth/Assets                                          -0.250161
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  2. A/B TESTING▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  Fixed Assets Turnover Frequency: t=6.03 p=0.000000 d=0.362 ***
+  Total Asset Growth Rate       : t=-3.67 p=0.000242 d=-0.277 ***
+  Quick Asset Turnover Rate     : t=2.13 p=0.033042 d=0.145 *
+  Research and development expense rate: t=-2.00 p=0.045399 d=-0.141 *
+  Cash Turnover Rate            : t=-1.49 p=0.136447 d=-0.112 ns
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  3. BAYESIAN INFERENCE
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Prior: Beta(1,1) — Uniform
+  Posterior: Beta(221,6600)
+  P(Bankruptcy) = 3.24%
+  95% HDI: [2.83%, 3.67%]
+
+  Bayesian: P(High Risk | Ratio < Median)
+    Fixed Assets Turnover Frequency:  89/3408 bankrupt -> 2.6% [2.1%,3.2%]
+    Total Asset Growth Rate: 169/3384 bankrupt -> 5.0% [4.3%,5.8%]
+    Quick Asset Turnover Rate:  79/3409 bankrupt -> 2.3% [1.9%,2.9%]
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  4. MACHINE LEARNING — LOGISTIC REGRESSION
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Accuracy:  0.8864
+  AUC-ROC:   0.9169
+  CV Score:  0.8686
+
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.89      0.94      1320
+           1       0.20      0.82      0.32        44
+
+    accuracy                           0.89      1364
+   macro avg       0.59      0.85      0.63      1364
+weighted avg       0.97      0.89      0.92      1364
+
+  F1 (bankrupt): 0.3172
+  Precision:     0.1967
+  Recall:        0.8182
+
+  Top 10 features (logistic regression coefficients):
+    Persistent EPS in the Last Four Seasons : -2.3133
+    Liability to Equity                     : -1.9620
+    Equity to Liability                     : -1.8711
+    Borrowing dependency                    : +1.7999
+    Accounts Receivable Turnover            : -1.3173
+    Total debt/Total net worth              : +1.2152
+    Net Income to Total Assets              : -1.1631
+    Net Value Per Share (B)                 : -1.0708
+    Net worth/Assets                        : -0.9790
+    Debt ratio %                            : +0.9790
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  5. MACHINE LEARNING — RANDOM FOREST
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Accuracy:  0.9714
+  AUC-ROC:   0.9388
+  CV Score:  0.9154
+
+  Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.99      1320
+           1       0.69      0.20      0.32        44
+
+    accuracy                           0.97      1364
+   macro avg       0.83      0.60      0.65      1364
+weighted avg       0.97      0.97      0.96      1364
+
+  F1 (bankrupt): 0.3158
+  Precision:     0.6923
+  Recall:        0.2045
+
+  Top 10 features (RF importance):
+    Borrowing dependency                    : 0.0547
+    Net Income to Total Assets              : 0.0472
+    Persistent EPS in the Last Four Seasons : 0.0415
+    Equity to Liability                     : 0.0412
+    Net worth/Assets                        : 0.0387
+    Retained Earnings to Total Assets       : 0.0345
+    Continuous interest rate (after tax)    : 0.0342
+    After-tax net Interest Rate             : 0.0324
+    Debt ratio %                            : 0.0323
+    Net profit before tax/Paid-in capital   : 0.0312
+
+  Avg Precision (LR): 0.3402
+  Avg Precision (RF): 0.4569
+
+  Confusion Matrix (LR):
+[[1173  147]
+ [   8   36]]
+  Confusion Matrix (RF):
+[[1316    4]
+ [  35    9]]
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  6. PROFESSIONAL VISUALIZATIONS
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  [OK] Dashboard.png
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  7. EXECUTIVE SUMMARY
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │                      EXECUTIVE SUMMARY                              │
+  ├─────────────────────────────────────────────────────────────────────┤
+  │                                                                     │
+  │  1. DATASET: 6,819 companies with 95 financial ratios     │
+  │     • Bankrupt: 220 (3.2%) — heavily imbalanced              │
+  │     • Imbalance ratio: 1:30                              │
+  │                                                                     │
+  │  2. BEST MODEL: Random Forest                                       │
+  │     • AUC-ROC: 0.939                                            │
+  │     • F1 (Bankrupt): 0.316                     │
+  │     • Average Precision: 0.457                                     │
+  │                                                                     │
+  │  3. TOP PREDICTIVE FEATURES:                                         │
+
+     • Borrowing dependency: 0.0547
+     • Net Income to Total Assets: 0.0472
+     • Persistent EPS in the Last Four Seasons: 0.0415
+     • Equity to Liability: 0.0412
+     • Net worth/Assets: 0.0387
+     • Retained Earnings to Total Assets: 0.0345
+
+  │  4. BAYESIAN ESTIMATE:                                              │
+  │     • P(Bankrupt) = 3.2%                                  │
+
+
+  │  5. CONFUSION MATRIX INSIGHTS:                                      │
+  │     • True Negatives:  1316                                    │
+  │     • True Positives:     9                                    │
+  │     • False Negatives:   35 (missing actual bankruptcies)     │
+  │     • False Positives:    4 (false alarms)                    │
+  │                                                                     │
+  │  6. CONCLUSION: Financial ratios can predict bankruptcy with        │
+  │     high accuracy. The key ratio is net worth / total assets.        │
+  │                                                                     │
+  └─────────────────────────────────────────────────────────────────────┘
+

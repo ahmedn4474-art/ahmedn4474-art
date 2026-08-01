@@ -1,0 +1,79 @@
+================================================================================
+  PROJECT 5: BANKRUPTCY PREDICTION
+  ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ø¥ÙÙ„Ø§Ø³ ÙˆØ§Ù„Ù†Ø³Ø¨ Ø§Ù„Ù…Ø§Ù„ÙŠØ©
+================================================================================
+
+  Companies: 6,819
+  Financial Ratios: 95
+
+------------------------------------------------------------
+  1. FREQUENCY STATISTICS
+------------------------------------------------------------
+
+Bankruptcy Distribution:
+  Non-Bankrupt (0): 6,599 (96.77%)
+  Bankrupt     (1): 220 (3.23%)
+
+Descriptive Stats - Key Ratios:
+  ROA                 : All=0.5052 | Bk=0=0.5081 | Bk=1=0.4185
+  DebtRatio           : All=0.1132 | Bk=0=0.1107 | Bk=1=0.1870
+  CurrentRatio        : All=403284.9542 | Bk=0=416729.8229 | Bk=1=0.0072
+  NetValuePerShare    : All=0.1906 | Bk=0=0.1916 | Bk=1=0.1603
+  GrossMargin         : All=0.6079 | Bk=0=0.6083 | Bk=1=0.5987
+  AssetTurnover       : All=0.1416 | Bk=0=0.1429 | Bk=1=0.1040
+  CashFlowPS          : All=0.3235 | Bk=0=0.3237 | Bk=1=0.3160
+  QuickRatio          : All=8376594.8197 | Bk=0=7257160.1871 | Bk=1=41954545.4588
+  InterestExpense     : All=0.6310 | Bk=0=0.6310 | Bk=1=0.6308
+
+------------------------------------------------------------
+  2. A/B TESTING
+------------------------------------------------------------
+
+T-Test: Bankrupt vs Non-Bankrupt for each ratio
+  Ratio                       t-stat    p-value
+  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  ROA                          22.31   0.000000 ***
+  DebtRatio                   -21.33   0.000000 ***
+  CurrentRatio                  0.18   0.855137 ns
+  NetValuePerShare             13.85   0.000000 ***
+  GrossMargin                   8.30   0.000000 ***
+  AssetTurnover                 5.62   0.000000 ***
+  CashFlowPS                    6.42   0.000000 ***
+  QuickRatio                   -2.07   0.038528 *
+  InterestExpense               0.22   0.824825 ns
+
+Top Discriminating Ratios (by absolute t-stat):
+  #1: ROA                  |t|=22.31 (Bk=0: 0.5081 vs Bk=1: 0.4185) p=0.000000
+  #2: DebtRatio            |t|=21.33 (Bk=0: 0.1107 vs Bk=1: 0.1870) p=0.000000
+  #3: NetValuePerShare     |t|=13.85 (Bk=0: 0.1916 vs Bk=1: 0.1603) p=0.000000
+  #4: GrossMargin          |t|=8.30 (Bk=0: 0.6083 vs Bk=1: 0.5987) p=0.000000
+  #5: CashFlowPS           |t|=6.42 (Bk=0: 0.3237 vs Bk=1: 0.3160) p=0.000000
+  #6: AssetTurnover        |t|=5.62 (Bk=0: 0.1429 vs Bk=1: 0.1040) p=0.000000
+  #7: QuickRatio           |t|=2.07 (Bk=0: 7257160.1871 vs Bk=1: 41954545.4588) p=0.038528
+  #8: InterestExpense      |t|=0.22 (Bk=0: 0.6310 vs Bk=1: 0.6308) p=0.824825
+  #9: CurrentRatio         |t|=0.18 (Bk=0: 416729.8229 vs Bk=1: 0.0072) p=0.855137
+
+------------------------------------------------------------
+  3. BAYESIAN ANALYSIS
+------------------------------------------------------------
+
+Bayesian: Base Bankruptcy Rate
+  Bankrupt: 220/6819
+  Posterior: Beta(221,6600)
+  Mean: 3.24%
+  95% CI: [2.83%, 3.67%]
+
+Bayesian: ROA Threshold Analysis
+  P(Bankrupt | ROA<0.45): 130/821 = 15.92%
+  P(Bankrupt | ROA<0.5): 210/3232 = 6.52%
+  P(Bankrupt | ROA<0.55): 219/5582 = 3.94%
+
+Bayesian: Debt Ratio Threshold Analysis
+  P(Bankrupt | Debt>0.1): 210/3984 = 5.29%
+  P(Bankrupt | Debt>0.15): 177/1668 = 10.66%
+  P(Bankrupt | Debt>0.2): 77/381 = 20.37%
+
+------------------------------------------------------------
+  4. VISUALIZATIONS
+------------------------------------------------------------
+  [OK] Bankruptcy_Project.png

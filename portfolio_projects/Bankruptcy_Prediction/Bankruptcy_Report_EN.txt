@@ -1,0 +1,34 @@
+======================================================================
+BANKRUPTCY PREDICTION -- 6-Skills Integrated Report
+======================================================================
+
+### Executive Summary
+6819 companies, 220 bankrupt (3.23%). Best model: RandomForest (AUC=0.9428). Cost-optimal threshold: t=0.50 (FN=5xFP).
+
+### Data Quality
+Score: 100.0/100. Missing: 0. Dups: 0.
+
+### Key Financial Indicators
+  * Net Income to Total Assets (corr=0.315)
+  * ROA(A) before interest and % after tax (corr=0.283)
+  * ROA(B) before interest and depreciation after (corr=0.273)
+
+### Statistical Analysis
+  * Net Value Per Share (B): t=+21.99, p=0.0000
+  * Net Value Per Share (A): t=+21.86, p=0.0000
+  * Net Value Per Share (C): t=+21.59, p=0.0000
+
+### Model Performance
+RandomForest: AUC=0.9428, F1=0.4865, Brier=0.0317, optimal t=0.50
+
+### Cost Analysis
+FN=5xFP. Cost-optimal threshold: t=0.50 at $196
+
+### Model Explainability (SHAP)
+SHAP summary plot generated for model interpretability.
+
+### Recommendations
+  * Monitor top-correlated financial ratios
+  * Use cost-optimal threshold (50%)
+  * Retrain model periodically on new data
+  * Incorporate macroeconomic indicators

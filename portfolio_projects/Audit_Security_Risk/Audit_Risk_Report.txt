@@ -1,0 +1,30 @@
+
+=====================================================================
+  AUDIT SECURITY RISK — ADVANCED ANALYTICS REPORT
+=====================================================================
+
+BENFORD'S LAW TEST:
+  • Column: AuditID
+  • Chi² = 399.64, p = 0.000000
+  • ANOMALOUS — possible data manipulation
+
+ENSEMBLE ANOMALY DETECTION:
+  • IsolationForest: 50 outliers
+  • LOF: 50 outliers
+  • Both methods agree: 33 (3.3%)
+
+XGBOOST CLASSIFICATION:
+  • Accuracy: 0.4550 | F1: 0.4545 | AUC: 0.6539
+  • Best params: {'learning_rate': 0.05, 'max_depth': 5, 'subsample': 0.8}
+  • Top features: AuditScore, Variance, DataValue
+
+TOP RISK FACTORS:
+  1. AuditScore
+  2. Variance
+  3. DataValue
+
+RECOMMENDATIONS:
+  1. Investigate accounts flagged by BOTH anomaly methods
+  2. Review Benford-nonconforming data segments
+  3. Prioritize high-risk predictions for manual audit
+=====================================================================

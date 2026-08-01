@@ -1,0 +1,13 @@
+Line 1: """_common.py — 6 skills integrated: auto-eda, deep-reasoning, data-orchestration, mlops-pipeline, q
+Line 13: # ── Arabic Text Support ──
+Line 45: # ── 1. DATA ORCHESTRATION ──
+Line 61: # ── 2. AUTO EDA (auto-eda) ──
+Line 102: # ── 3. DEEP REASONING ──
+Line 118:         print(f"    χ² {c1} × {c2}: χ²={chi2:.1f} p={p:.4f} Cramér V={cramer:.3f}")
+Line 130: # ── 4. SYNTHETIC DATA ENGINEERING ──
+Line 152: # ── 5. MLOps PIPELINE ──
+Line 165: # ── 6. QUANT TRADING ──
+Line 191: # ── 7. BILINGUAL REPORTS ──
+Line 205:         self.en.append(f"  • {en}"); self.ar.append(f"  • {ar}")
+Line 213: # ── Chart helpers ──
+Line 220:     ax.set_title(f'ROC — {name}'); ax.legend(); ax.set_aspect('equal')

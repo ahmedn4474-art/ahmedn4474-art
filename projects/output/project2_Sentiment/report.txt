@@ -1,0 +1,95 @@
+================================================================================
+  PROJECT 2: SENTIMENT ANALYSIS - TWITTER
+  ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ù…Ø´Ø§Ø¹Ø± ÙÙŠ Ø§Ù„ØªØºØ±ÙŠØ¯Ø§Øª
+================================================================================
+
+Loading full dataset (sampling 200K balanced)...
+  Loaded 200,000 tweets (100K negative + 100K positive)
+
+------------------------------------------------------------
+  1. FREQUENCY STATISTICS / Ø§Ù„Ø¥Ø­ØµØ§Ø¡ Ø§Ù„ØªÙƒØ±Ø§Ø±ÙŠ
+------------------------------------------------------------
+
+Sentiment distribution:
+  Negative (0)   : 100000 (50.00%)
+  Positive (4)   : 100000 (50.00%)
+
+Year range: 2009 - 2009
+Unique users: 148,416
+
+Tweet length stats:
+count    200000.0
+mean         74.1
+std          36.5
+min           6.0
+25%          44.0
+50%          69.0
+75%         104.0
+max         323.0
+
+Word count stats:
+count    200000.0
+mean         13.2
+std           7.0
+min           1.0
+25%           7.0
+50%          12.0
+75%          19.0
+max          41.0
+
+Has URL: 4.4%
+Is @mention: 43.6%
+
+------------------------------------------------------------
+  2. A/B HYPOTHESIS TESTING
+------------------------------------------------------------
+
+T-Test: Tweet length by Sentiment
+  Negative: mean=74.5 | Positive: mean=73.8
+  t=4.021, p=0.000058 *** SIGNIFICANT
+
+T-Test: Word count by Sentiment
+  Negative: mean=13.6 | Positive: mean=12.8
+  t=27.211, p=0.000000 ***
+
+Chi-Square: Has URL by Sentiment
+
+sentiment      0      4
+has_url                
+False      97008  94202
+True        2992   5798
+  chi2=936.26, p=0.000000 ***
+
+Chi-Square: Is Mention by Sentiment
+
+sentiment       0      4
+is_mention              
+False       64237  48589
+True        35763  51411
+  chi2=4978.47, p=0.000000 ***
+
+ANOVA: Year Negative vs Positive
+  Negative year mean: 2009.0 | Positive: 2009.0
+  F=nan, p=nan ns
+
+------------------------------------------------------------
+  3. BAYESIAN ANALYSIS
+------------------------------------------------------------
+
+Bayesian: Proportion of Positive Tweets
+  Positive: 100000/200000
+  Posterior: Beta(100001,100001)
+  Mean: 50.00%
+  95% CI: [49.78%, 50.22%]
+
+Bayesian A/B: URL presence -> Positive sentiment
+  With URL:   5798/8790 = 66.0%
+  Without URL:94202/191210 = 49.3%
+  Posterior: URL=Yes Beta(5799,2993) mean=65.96%
+  Posterior: URL=No  Beta(94203,97009) mean=49.27%
+  P(URL > No URL) = 100.00%
+
+------------------------------------------------------------
+  4. VISUALIZATIONS
+------------------------------------------------------------
+  [OK] Sentiment_Project.png

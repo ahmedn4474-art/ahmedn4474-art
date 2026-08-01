@@ -1,0 +1,31 @@
+PROJECT 7: CUSTOMER CHURN PREDICTION REPORT
+===========================================
+Total Customers: 7,032
+Churn Rate: 26.58%
+Class Distribution: Churned=1869 | Retained=5163
+
+Model Performance Metrics:
+  AUC-ROC: 0.8320
+  Average Precision: 0.6481
+
+Classification Report:
+              precision    recall  f1-score   support
+
+    Retained       0.87      0.82      0.85      1033
+     Churned       0.58      0.66      0.62       374
+
+    accuracy                           0.78      1407
+   macro avg       0.72      0.74      0.73      1407
+weighted avg       0.79      0.78      0.79      1407
+
+Top 10 Feature Importances:
+  15. Contract: 0.3463
+  9. OnlineSecurity: 0.1068
+  8. InternetService: 0.0646
+  12. TechSupport: 0.0608
+  17. PaymentMethod: 0.0566
+  16. PaperlessBilling: 0.0474
+  4. Dependents: 0.0331
+  3. Partner: 0.0317
+  6. PhoneService: 0.0298
+  5. tenure: 0.0298

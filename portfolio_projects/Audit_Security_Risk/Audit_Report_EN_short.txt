@@ -1,0 +1,23 @@
+AUDIT SECURITY RISK ANALYSIS - EXECUTIVE SUMMARY
+==================================================
+
+Total Records: 1000
+Risk Distribution: Low 339 | Medium 341 | High 320
+
+Key Findings:
+• Best Model: Gradient Boosting
+  - Accuracy: 0.6150
+  - Macro F1: 0.6205
+
+• Anomaly Detection: 29 records flagged by both Isolation Forest and LOF
+
+• Top Risk Factors: AuditScore, Variance, DataValue, ErrorRate, AuditType
+
+• Benford's Law: DEVIATES (p=0.0000)
+
+• Total Misclassification Cost: 294
+
+Primary Recommendations:
+- Investigate all consensus-anomaly records
+- Strengthen cybersecurity controls for high-risk segments
+- Deploy Gradient Boosting for proactive risk classification

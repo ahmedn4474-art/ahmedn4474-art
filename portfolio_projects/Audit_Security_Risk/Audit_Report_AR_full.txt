@@ -1,0 +1,106 @@
+تقرير تدقيق وتحليل المخاطر الأمنية - تقرير كامل
+=======================================================
+
+1. ملخص البيانات
+------------------------------
+إجمالي السجلات: 1000
+عدد المتغيرات: 35
+المتغير المستهدف: RiskLevel (مستوى المخاطرة)
+توزيع المخاطر: منخفض 339 (33.9%) | متوسط 341 (34.1%) | مرتفع 320 (32.0%)
+
+المتغيرات الرقمية (12):
+DataValue, Timestamp, AuditScore, Variance, Duration, ErrorRate, CompletionPercentage, AuditCost, ReviewCount, RiskFactor, PaymentProcessingSecurity, PCIDSSComplianceLevel
+
+المتغيرات الفئوية (21):
+AuditType, AuditStatus, EncryptionStandard, TokenizationUsed, PaymentGatewaySecurity, WebsiteSecurity, VulnerabilityTesting, WAFInPlace, AccessControls, MalwareScanning, PatchManagement, PasswordPolicies, AccountTakeoverPrevention, SessionManagement, StockoutsRisk, OverstockingRisk, InventoryDataAccuracy, OrderAccuracy, ShippingIssues, ShippingCostAccuracy, ReturnsRefundsProcess
+
+2. تحليل البيانات الاستكشافي
+------------------------------
+- توزيع المخاطر متوازن نسبياً (أنحرف طفيف نحو الفئة المتوسطة)
+- أكثر أنواع التدقيق المرتبطة بالمخاطر العالية يتم تحليلها في جدول التقاطع
+- مصفوفة الارتباط متاحة في المخططات البيانية
+
+3. الاختبارات الإحصائية
+------------------------------
+
+اختبار كروسكال-واليس (فروق المتغيرات الرقمية حسب مستوى المخاطرة):
+المتغير                   قيمة H     p-value    الدلالة 
+-----------------------------------------------------
+DataValue                 2.12       0.345964   ns      
+Timestamp                 1.99       0.370068   ns      
+AuditScore                189.01     0.000000   ***     
+Variance                  1.55       0.460581   ns      
+Duration                  1.56       0.457684   ns      
+ErrorRate                 1.92       0.382844   ns      
+CompletionPercentage      0.77       0.681875   ns      
+AuditCost                 0.09       0.955900   ns      
+ReviewCount               0.16       0.924563   ns      
+RiskFactor                1.27       0.530234   ns      
+
+اختبار كاي تربيع (الارتباطات الفئوية):
+المتغير                   Chi2       p-value    Cramer V  
+-------------------------------------------------------
+AuditType                 13.79      0.087273   0.1175    
+AuditStatus               2.94       0.568418   0.0542    
+EncryptionStandard        5.38       0.250726   0.0733    
+TokenizationUsed          1.50       0.472139   0.0387    
+PaymentGatewaySecurity    3.98       0.408064   0.0631    
+WebsiteSecurity           5.81       0.213841   0.0762    
+VulnerabilityTesting      7.46       0.023961   0.0864    
+WAFInPlace                0.49       0.780753   0.0222    
+AccessControls            2.78       0.595350   0.0527    
+MalwareScanning           3.37       0.185644   0.0580    
+
+قانون بنفورد:
+- المتغير: DataValue
+- Chi-square: 413.15
+- p-value: 0.000000
+- النتيجة: غير مطابق
+
+4. كشف الشذوذ
+------------------------------
+- Isolation Forest: 50 سجلاً شاذاً (5.0%)
+- Local Outlier Factor: 50 سجلاً شاذاً (5.0%)
+- بالتوافق بين الطريقتين: 29 سجلاً (2.9%)
+
+5. نماذج التعلم الآلي
+------------------------------
+
+مقارنة النماذج:
+Model                       Accuracy   F1 Macro    ROC AUC       Cost
+-----------------------------------------------------------------
+Gradient Boosting             0.6150     0.6205     0.8076        294
+Random Forest                 0.5600     0.5504     0.6917        457
+Logistic Regression           0.2900     0.2296     0.4577        658
+
+أفضل نموذج: Gradient Boosting
+مصفوفة الارتباك (Gradient Boosting):
+                  Low   Medium     High
+  Low            39       25        4
+  Medium         23       36        9
+  High            3       13       48
+
+6. أهم الميزات المؤثرة:
+------------------------------
+  1. AuditScore
+  2. Variance
+  3. DataValue
+  4. ErrorRate
+  5. AuditType
+
+7. تحليل التكاليف
+------------------------------
+التكلفة الإجمالية للتصنيف الخاطئ:
+  Gradient Boosting: 294
+  Random Forest: 457
+  Logistic Regression: 658
+
+8. التوصيات
+------------------------------
+1. مراجعة السجلات الشاذة (التوافق بين Isolation Forest و LOF) للتدقيق اليدوي
+2. تعزيز ضوابط الأمن السيبراني للمتغيرات الأكثر تأثيراً
+3. استخدام نموذج Gradient Boosting للتنبؤ المبكر بمستويات المخاطرة
+4. تحسين جودة البيانات للحقول التي تعاني من قيم مفقودة
+5. مراجعة السجلات غير المطابقة لقانون بنفورد للكشف عن التلاعب المحتمل
+6. إجراء تحليل دوري للتأكد من استقرار توزيع المخاطر
+7. تطبيق مصفوفة التكاليف في تقييم أداء النماذج المستقبلية

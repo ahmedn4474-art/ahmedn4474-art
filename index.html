@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Noureldin | Data & Financial Analyst</title>
+  <meta name="description" content="Portfolio of Ahmed Noureldin - Data Analyst & Accounting Student certified by IBM, DeepLearning.AI, and Interactive Brokers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(99, 102, 241, 0.4);
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-kaggle: #20beff;
+      --text: #f3f4f6;
+      --text-sub: #9ca3af;
+      --badge-bg: rgba(99, 102, 241, 0.12);
+      --badge-text: #818cf8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 1.2rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { font-size: 1.2rem; font-weight: 800; color: #fff; text-decoration: none; }
+    .logo span { color: var(--primary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--text-sub); text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+
+    /* Hero */
+    header.hero {
+      max-width: 900px; margin: 0 auto;
+      padding: 9rem 1.5rem 4rem; text-align: center;
+    }
+    .hero-badge {
+      display: inline-block; padding: 0.4rem 1.2rem;
+      background: var(--badge-bg); border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 999px; color: var(--badge-text);
+      font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem;
+    }
+    h1 { font-size: 3.25rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1.25rem; color: #fff; line-height: 1.2; }
+    h1 span { background: linear-gradient(135deg, #818cf8 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { font-size: 1.2rem; color: var(--text-sub); margin-bottom: 2.5rem; max-width: 750px; margin-left: auto; margin-right: auto; }
+
+    .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn {
+      padding: 0.85rem 1.75rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; transition: all 0.25s ease; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+    .btn-secondary { background: rgba(255, 255, 255, 0.05); color: #fff; border: 1px solid var(--card-border); }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+    .btn-kaggle { background: rgba(32, 190, 255, 0.12); color: var(--accent-kaggle); border: 1px solid rgba(32, 190, 255, 0.3); }
+    .btn-kaggle:hover { background: rgba(32, 190, 255, 0.2); }
+
+    /* Layout */
+    main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 6rem; }
+    section { margin-bottom: 5rem; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .section-desc { color: var(--text-sub); font-size: 1rem; }
+
+    /* Skills Grid */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .skill-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 1.75rem; transition: all 0.25s;
+    }
+    .skill-card:hover { border-color: var(--card-border-hover); transform: translateY(-3px); }
+    .skill-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: #fff; }
+    .skill-card p { color: var(--text-sub); font-size: 0.9rem; line-height: 1.6; }
+
+    /* Certifications Grid */
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .cert-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .cert-provider { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-cyan); margin-bottom: 0.5rem; }
+    .cert-title { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+    .cert-list { list-style: none; padding: 0; color: var(--text-sub); font-size: 0.9rem; }
+    .cert-list li { margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative; }
+    .cert-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-emerald); font-weight: bold; }
+
+    /* Projects Grid */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; }
+    .project-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 18px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .project-card:hover { border-color: var(--card-border-hover); transform: translateY(-4px); }
+    .project-tag { display: inline-block; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: var(--badge-bg); color: var(--badge-text); margin-bottom: 1rem; }
+    .project-card h3 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+    .project-card p { color: var(--text-sub); font-size: 0.925rem; margin-bottom: 1.5rem; flex-grow: 1; }
+    
+    .project-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .project-btn-github {
+      font-size: 0.85rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06); color: #fff; border: 1px solid var(--card-border);
+      text-decoration: none; transition: background 0.2s;
+    }
+    .project-btn-github:hover { background: rgba(255, 255, 255, 0.12); }
+    
+    .project-btn-kaggle {
+      font-size: 0.85rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 8px;
+      background: rgba(32, 190, 255, 0.1); color: var(--accent-kaggle); border: 1px solid rgba(32, 190, 255, 0.25);
+      text-decoration: none; transition: background 0.2s;
+    }
+    .project-btn-kaggle:hover { background: rgba(32, 190, 255, 0.2); }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--card-border); padding: 3rem 1.5rem; text-align: center; color: var(--text-sub); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo">Ahmed<span>Noureldin</span></a>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certs">Certifications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-badge">17+ Professional Certifications • IBM & DeepLearning.AI</div>
+    <h1>Ahmed Noureldin Mohamed<br><span>Data & Financial Analyst</span></h1>
+    <p class="subtitle">3rd Year Accounting Student at New Cairo Higher Institute. Combining accounting background with Python, SQL, Financial Modeling, and Data Analytics to analyze datasets and build machine learning solutions.</p>
+    <div class="cta-group">
+      <a href="#projects" class="btn btn-primary">Explore My Projects</a>
+      <a href="https://github.com/ahmedn4474-art" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+      <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="btn btn-kaggle">Kaggle Profile</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <h2 class="section-title">Core Technical & Analytical Skills</h2>
+        <p class="section-desc">My technical toolkit spanning accounting, data analysis, and software tools.</p>
+      </div>
+
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h3>📊 Financial & Accounting Analysis</h3>
+          <p>General ledger analysis, financial ratio analysis, cash flow forecasting, double-entry bookkeeping, and cost analysis.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>🐍 Data Analytics & Python</h3>
+          <p>Pandas, NumPy, Exploratory Data Analysis (EDA), statistical hypothesis testing (ANOVA, Chi-Square, ADF stationarity).</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>🗄️ Databases & Data Pipelines</h3>
+          <p>SQL query writing, PostgreSQL, BigQuery, data cleaning, ETL pipeline preparation, handling missing data & outliers.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>🤖 Machine Learning & Modeling</h3>
+          <p>Scikit-Learn, Random Forest, LightGBM, Isolation Forest anomaly detection, Logistic Regression, model evaluation (ROC-AUC).</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>📈 Business Intelligence & BI</h3>
+          <p>Power BI dashboards, Seaborn high-resolution charts, Matplotlib visualization, data storytelling.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>⚙️ Developer Tools</h3>
+          <p>Git, GitHub, VS Code, Jupyter Notebooks, Pytest, Python 3.11+ clean code standards.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certs">
+      <div class="section-header">
+        <h2 class="section-title">Professional Certifications (17+)</h2>
+        <p class="section-desc">Recognized industry credentials in Data Science, SQL, and Financial Modeling.</p>
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card">
+          <div>
+            <div class="cert-provider">DeepLearning.AI</div>
+            <h3 class="cert-title">Data Analytics & Machine Learning</h3>
+            <ul class="cert-list">
+              <li>DeepLearning.AI Data Analytics Professional Certificate</li>
+              <li>Exploratory Data Analysis & Statistical Inference</li>
+              <li>Machine Learning Algorithms & Model Evaluation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div>
+            <div class="cert-provider">IBM Professional Certificates</div>
+            <h3 class="cert-title">Data Science & SQL Engineering</h3>
+            <ul class="cert-list">
+              <li>IBM Data Science Professional Certificate</li>
+              <li>IBM Python for Data Science & AI</li>
+              <li>IBM SQL & Relational Databases for Data Science</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div>
+            <div class="cert-provider">Interactive Brokers (IBKR)</div>
+            <h3 class="cert-title">Financial Modeling & Markets</h3>
+            <ul class="cert-list">
+              <li>Financial Modeling & Corporate Valuation (WACC)</li>
+              <li>Equities Analysis & Valuation Standards</li>
+              <li>Fixed Income, Bonds & Interest Rates</li>
+              <li>Forex Exchange Markets & Financial Derivatives</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <h2 class="section-title">Featured Data Projects</h2>
+        <p class="section-desc">End-to-end data analysis and machine learning projects available on GitHub and Kaggle.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Financial Analytics</span>
+            <h3>Corporate Bankruptcy Risk Analysis</h3>
+            <p>Analyzed financial dataset to classify company bankruptcy risk. Evaluated Random Forest and LightGBM classification performance using ROC-AUC and Precision-Recall metrics.</p>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ahmedn4474-art/ahmedn4474-art/tree/main/Project5_Corporate_Bankruptcy" target="_blank" class="project-btn-github">GitHub Folder &rarr;</a>
+            <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="project-btn-kaggle">Kaggle Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="project-tag">HR & Statistics</span>
+            <h3>HR Employee Attrition Analysis</h3>
+            <p>Analyzed workforce dataset to identify key drivers of employee turnover (such as OverTime and income levels) using ANOVA and Chi-Square statistical tests.</p>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ahmedn4474-art/ahmedn4474-art/tree/main/Project1_HR_Attrition" target="_blank" class="project-btn-github">GitHub Folder &rarr;</a>
+            <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="project-btn-kaggle">Kaggle Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Audit & Anomaly</span>
+            <h3>Audit Risk & Anomaly Detection</h3>
+            <p>Identified unusual transactions in operational audit logs using Isolation Forest anomaly scoring and Kolmogorov-Smirnov statistical distribution testing.</p>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ahmedn4474-art/ahmedn4474-art/tree/main/Project3_Audit_Risk" target="_blank" class="project-btn-github">GitHub Folder &rarr;</a>
+            <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="project-btn-kaggle">Kaggle Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="project-tag">Accounting & Forecasting</span>
+            <h3>Financial Accounting & Cash Flow Forecasting</h3>
+            <p>Analyzed 100,000 ledger transactions to test cash flow stationarity with Augmented Dickey-Fuller (ADF) tests and forecasted weekly cash volumes with Holt-Winters.</p>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ahmedn4474-art/ahmedn4474-art/tree/main/Project4_Financial_Accounting" target="_blank" class="project-btn-github">GitHub Folder &rarr;</a>
+            <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="project-btn-kaggle">Kaggle Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <span class="project-tag">NLP & Text Mining</span>
+            <h3>Twitter Sentiment Classification</h3>
+            <p>Preprocessed 1.6M tweets dataset, extracted TF-IDF text features, and trained Logistic Regression and Naive Bayes models for binary sentiment classification.</p>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ahmedn4474-art/ahmedn4474-art/tree/main/Project2_Twitter_Sentiment" target="_blank" class="project-btn-github">GitHub Folder &rarr;</a>
+            <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="project-btn-kaggle">Kaggle Profile &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="text-align: center;">
+      <div class="section-header">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-desc">Open for entry/mid-level Data Analyst roles, financial modeling projects, and freelance assignments.</p>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <p style="font-size: 1.1rem; margin-bottom: 0.5rem; color: #fff;"><strong>Email:</strong> ahmedn4474@gmail.com</p>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #fff;"><strong>Location:</strong> New Cairo, Egypt</p>
+        <div class="cta-group">
+          <a href="mailto:ahmedn4474@gmail.com" class="btn btn-primary">Send Email</a>
+          <a href="https://github.com/ahmedn4474-art" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+          <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="btn btn-kaggle">Kaggle Profile</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ahmed Noureldin Mohamed. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

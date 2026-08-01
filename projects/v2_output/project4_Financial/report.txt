@@ -1,0 +1,141 @@
+=====================================================================================
+  PROJECT 4: FINANCIAL ACCOUNTING — PROFESSIONAL ANALYSIS
+=====================================================================================
+
+  Transactions: 100,000
+  Period: 2023-01-01 to 2023-12-28
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  1. EXPLORATORY DATA ANALYSIS
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Account:
+    Accounts Payable      25,104 (25.1%)
+    Inventory             25,054 (25.1%)
+    Accounts Receivable   25,038 (25.0%)
+    Cash                  24,804 (24.8%)
+
+  Category:
+    Revenue               25,160 (25.2%)
+    Asset                 25,118 (25.1%)
+    Liability             24,870 (24.9%)
+    Expense               24,852 (24.9%)
+
+  Transaction_Type:
+    Sale                  25,040 (25.0%)
+    Purchase              25,022 (25.0%)
+    Expense               24,985 (25.0%)
+    Transfer              24,953 (25.0%)
+
+  Payment_Method:
+    Check                 25,131 (25.1%)
+    Bank Transfer         25,069 (25.1%)
+    Cash                  24,949 (24.9%)
+    Credit Card           24,851 (24.9%)
+
+  Amount stats:
+count    100000.00
+mean        607.75
+std         254.91
+min           3.88
+25%         401.64
+50%         634.08
+75%         829.99
+max         999.99
+
+  Weekend transactions: 28.8%
+
+  Monthly avg transaction: Month
+1     606.88
+2     606.68
+3     603.90
+4     604.80
+5     607.83
+6     611.91
+7     608.58
+8     609.69
+9     606.48
+10    604.82
+11    612.02
+12    609.37
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  2. A/B TESTING
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  T-Test: Amount by Category
+    Asset      vs Revenue   : t=0.48 p=0.634297 d=0.004 ns
+    Asset      vs Expense   : t=-0.98 p=0.325778 d=-0.009 ns
+    Asset      vs Liability : t=0.83 p=0.407452 d=0.007 ns
+    Revenue    vs Expense   : t=-1.45 p=0.146823 d=-0.013 ns
+    Revenue    vs Liability : t=0.35 p=0.725526 d=0.003 ns
+    Expense    vs Liability : t=1.80 p=0.071656 d=0.016 ns
+
+  ANOVA: Amount by Payment Method
+    F=1.43 p=0.232915
+
+  Chi-Square: Account x Payment Method
+    chi2=5.61 p=0.777964
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  3. BAYESIAN INFERENCE
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Bayesian: P(Transaction = Asset)
+    Posterior: Beta(25119,74883)
+    Mean: 25.12%
+    95% HDI: [24.85%, 25.39%]
+
+  Bayesian: Payment Method Distribution
+    Cash           :  24949/100000 -> 24.9% [24.7%,25.2%]
+    Check          :  25131/100000 -> 25.1% [24.9%,25.4%]
+    Credit Card    :  24851/100000 -> 24.9% [24.6%,25.1%]
+    Bank Transfer  :  25069/100000 -> 25.1% [24.8%,25.3%]
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  4. ANOMALY DETECTION — ISOLATION FOREST
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  Anomalous days: 17 / 336 (5.1%)
+
+  Anomalous days (high activity):
+    2023-12-21 | Count=  328 Total=$213595.73 Avg=$651.21
+    2023-07-16 | Count=  343 Total=$211384.72 Avg=$616.28
+    2023-05-27 | Count=  338 Total=$209917.06 Avg=$621.06
+    2023-06-28 | Count=  333 Total=$208372.70 Avg=$625.74
+    2023-06-16 | Count=  319 Total=$204636.81 Avg=$641.49
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  5. PROFESSIONAL VISUALIZATIONS
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  [OK] Dashboard.png
+
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  6. EXECUTIVE SUMMARY
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │                      EXECUTIVE SUMMARY                              │
+  ├─────────────────────────────────────────────────────────────────────┤
+  │                                                                     │
+  │  1. OVERVIEW: 100,000 transactions over 336 days         │
+  │     • Total volume: $60,774,737 in debits & credits          │
+  │     • Average transaction: $607.75                          │
+  │                                                                     │
+  │  2. ACCOUNT DISTRIBUTION (balanced):                                 │
+
+     • Accounts Payable: 25.1%
+     • Inventory: 25.1%
+     • Accounts Receivable: 25.0%
+     • Cash: 24.8%
+
+  │  3. ANOMALIES: 17 unusual days detected     │
+  │     • Isolation Forest identified 5% of days as anomalous            │
+  │                                                                     │
+  │  4. PATTERNS:                                                        │
+  │     • Consistent activity throughout the year (no seasonality)       │
+  │     • Credit Card usage slightly lower than other methods            │
+  │     • Revenue and Asset categories dominate                         │
+  │                                                                     │
+  └─────────────────────────────────────────────────────────────────────┘
+

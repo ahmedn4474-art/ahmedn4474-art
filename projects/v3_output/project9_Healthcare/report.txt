@@ -1,0 +1,41 @@
+PROJECT 9: HEALTHCARE ANALYTICS (BREAST CANCER DIAGNOSIS) REPORT
+===============================================================
+Total Patients: 569
+Malignant Cases (flips original class labels): 212 (37.26%)
+Benign Cases: 357 (62.74%)
+Clinical Features analyzed: 30
+
+Model Performance Metrics:
+  Diagnostic AUC-ROC: 0.9957
+  Diagnostic Average Precision: 0.9944
+
+Model Diagnostic Report:
+              precision    recall  f1-score   support
+
+      Benign       0.95      1.00      0.97        72
+   Malignant       1.00      0.90      0.95        42
+
+    accuracy                           0.96       114
+   macro avg       0.97      0.95      0.96       114
+weighted avg       0.97      0.96      0.96       114
+
+Confusion Matrix:
+  True Negatives (Benign caught):     72  |  False Positives (False Alarms):      0
+  False Negatives (Missed cancers):     4  |  True Positives (Cancers caught):      38
+
+Bayesian Inference on Malignancy Base Probability:
+  Posterior Distribution: Beta(213, 358)
+  Posterior Mean (Base Probability): 37.30%
+  95% Credible Interval: [0.3338, 0.4131]
+
+Top 10 Clinical Risk Indicators (Feature Importance):
+  22. worst texture: 460.0000
+  2. mean texture: 404.0000
+  8. mean concave points: 362.0000
+  23. worst perimeter: 333.0000
+  28. worst concave points: 308.0000
+  14. area error: 233.0000
+  21. worst radius: 209.0000
+  27. worst concavity: 178.0000
+  24. worst area: 176.0000
+  25. worst smoothness: 169.0000
