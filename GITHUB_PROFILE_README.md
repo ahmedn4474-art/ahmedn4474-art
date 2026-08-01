@@ -54,17 +54,17 @@ I am a **Data Analyst** with a strong foundation in **Accounting and Financial A
 
 ---
 
-## 📂 Featured Quantitative Data Projects
+## 📂 Independent Portfolio Repositories
 
-Below are 5 end-to-end data analysis projects. Each project repository contains complete, executed Jupyter Notebooks (`.ipynb`), structured code modules, visualization plots, and comprehensive English technical reports.
+Below are 5 standalone quantitative data analysis repositories. Each repository contains complete, executed Jupyter Notebooks (`.ipynb`), structured code modules, visualization plots, and comprehensive English technical reports.
 
-| Project Title | Domain | Key Methodologies & Tools | Project Notebook | English Technical Report |
-| :--- | :--- | :--- | :---: | :---: |
-| **Corporate Bankruptcy Prediction** | Financial Risk | Imbalanced Class Handling (SMOTE), Random Forest, LightGBM, Cost-Matrix Loss Optimization ($p^*=0.33$), Counterfactual Restructuring Solver | [`Jupyter Notebook`](./Project5_Corporate_Bankruptcy/Corporate_Bankruptcy_Notebook.ipynb) | [`Technical Report`](./Project5_Corporate_Bankruptcy/README.md) |
-| **HR Employee Attrition Analysis** | Workforce Analytics | Exploratory Data Analysis, ANOVA, Chi-Square Independence Tests, Logistic Regression, OverTime & Pay Analysis | [`Jupyter Notebook`](./Project1_HR_Attrition/HR_Attrition_Notebook.ipynb) | [`Technical Report`](./Project1_HR_Attrition/README.md) |
-| **Audit Risk & Anomaly Detection** | Audit & Security | Isolation Forest Anomaly Scoring, Kolmogorov-Smirnov Distribution Testing, Feature Importance Ranking | [`Jupyter Notebook`](./Project3_Audit_Risk/Audit_Risk_Notebook.ipynb) | [`Technical Report`](./Project3_Audit_Risk/README.md) |
-| **Financial Accounting Analytics** | Accounting & Treasury | 100k Transaction General Ledger Analytics, ADF Stationarity Testing, Holt-Winters Cash Flow Forecasting | [`Jupyter Notebook`](./Project4_Financial_Accounting/Financial_Fraud_Notebook.ipynb) | [`Technical Report`](./Project4_Financial_Accounting/README.md) |
-| **Twitter Sentiment Classification** | NLP & Text Mining | 1.6M Tweets Preprocessing, TF-IDF Vectorization, Logistic Regression, Naive Bayes Classifier | [`Jupyter Notebook`](./Project2_Twitter_Sentiment/Twitter_Sentiment_Notebook.ipynb) | [`Technical Report`](./Project2_Twitter_Sentiment/README.md) |
+| Project Repository | Category | Core Methods & Tools | Dedicated Repository Link |
+| :--- | :--- | :--- | :---: |
+| **Corporate Bankruptcy Prediction** | Financial Risk | Classifying company default risk on financial ratios using Random Forest & LightGBM | [`Corporate-Bankruptcy-Prediction`](https://github.com/ahmedn4474-art/Corporate-Bankruptcy-Prediction) |
+| **HR Employee Attrition Analysis** | Workforce Analytics | Analyzing workforce turnover drivers using ANOVA and Chi-Square statistical hypothesis testing | [`HR-Employee-Attrition-Analysis`](https://github.com/ahmedn4474-art/HR-Employee-Attrition-Analysis) |
+| **Audit Risk & Anomaly Detection** | Audit & Security | Identifying unusual operational audit entries using Isolation Forest and Kolmogorov-Smirnov test | [`Audit-Risk-Anomaly-Detection`](https://github.com/ahmedn4474-art/Audit-Risk-Anomaly-Detection) |
+| **Financial Accounting Analytics** | Accounting & Treasury | 100,000 general ledger transaction analytics featuring ADF stationarity and Holt-Winters forecasting | [`Financial-Accounting-Analytics`](https://github.com/ahmedn4474-art/Financial-Accounting-Analytics) |
+| **Twitter Sentiment Classification** | NLP & Text Mining | Preprocessing 1.6M tweets dataset with TF-IDF vectorization and Logistic Regression classification | [`Twitter-Sentiment-Classification`](https://github.com/ahmedn4474-art/Twitter-Sentiment-Classification) |
 
 ---
 
