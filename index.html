@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmed Noureldin | Financial Data Analyst & Quantitative Finance Portfolio</title>
-    <meta name="description" content="Official portfolio of Ahmed Noureldin Mohamed — Financial Data Analyst, Quantitative Researcher & Ex-CIB Intern. Specialized in Financial Modeling, Time-Series, and Credit Risk Analytics.">
+    <meta name="description" content="Portfolio of Ahmed Noureldin Mohamed — Financial Data Analyst, Quantitative Researcher & Ex-CIB Intern. Specialized in Financial Modeling, Time-Series, and Credit Risk Analytics.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for High-End Interactive Financial Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-theme">
-    <!-- Background Glow Blobs -->
-    <div class="glow-bg glow-1"></div>
-    <div class="glow-bg glow-2"></div>
-    <div class="glow-bg glow-3"></div>
+    <!-- Interactive Background Canvas & Cursor Spotlight -->
+    <canvas id="bg-canvas"></canvas>
+    <div id="cursor-glow"></div>
 
     <!-- Navigation Bar -->
     <header class="navbar" id="navbar">
@@ -26,8 +27,9 @@
             <nav class="nav-links">
                 <a href="#about"><i class="fa-solid fa-user-tie"></i> About</a>
                 <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
-                <a href="#projects"><i class="fa-solid fa-chart-line"></i> Projects</a>
-                <a href="#certifications"><i class="fa-solid fa-certificate"></i> Credentials</a>
+                <a href="#analytics-dash"><i class="fa-solid fa-chart-pie"></i> Visual Models</a>
+                <a href="#projects"><i class="fa-solid fa-folder-open"></i> Projects</a>
+                <a href="#certifications"><i class="fa-solid fa-award"></i> 17+ Certifications</a>
                 <a href="#skills"><i class="fa-solid fa-code"></i> Tech Stack</a>
                 <a href="#contact" class="btn-nav"><i class="fa-solid fa-paper-plane"></i> Contact</a>
             </nav>
@@ -55,27 +57,29 @@
             
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-arrow-trend-up"></i> Explore 6 Projects</a>
-                <a href="https://github.com/ahmedn4474-art" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub Profile</a>
-                <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-kaggle"></i> Kaggle Profile</a>
-                <a href="mailto:ahmedn4474@gmail.com" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Email Me</a>
+                <a href="#analytics-dash" class="btn btn-secondary"><i class="fa-solid fa-chart-line"></i> Live Visual Models</a>
+                <a href="https://github.com/ahmedn4474-art" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
+                <a href="mailto:ahmedn4474@gmail.com" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Email</a>
             </div>
 
+            <!-- Animated Stats Counter Grid -->
             <div class="hero-stats">
-                <div class="stat-card">
-                    <div class="stat-num">6+</div>
-                    <div class="stat-label">End-to-End Projects</div>
+                <div class="stat-card glass">
+                    <div class="stat-num" data-target="6">0</div>
+                    <div class="stat-label">End-to-End Verified Projects</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-num">17+</div>
+                <div class="stat-card glass">
+                    <div class="stat-num" data-target="17">0</div>
                     <div class="stat-label">Verified Certifications</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-num">100k+</div>
-                    <div class="stat-label">Data Records Modeled</div>
+                <div class="stat-card glass">
+                    <div class="stat-num" data-target="100">0<span>k+</span></div>
+                    <div class="stat-label">General Ledger Transactions Modeled</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card glass">
                     <div class="stat-num">CIB</div>
-                    <div class="stat-label">Bank Analytics Division</div>
+                    <div class="stat-label">Bank Analytics Division Experience</div>
                 </div>
             </div>
         </div>
@@ -114,7 +118,7 @@
     <section class="section bg-alt" id="experience">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Career History</span>
+                <span class="section-tag">Career History & Academia</span>
                 <h2 class="section-title">Experience & Education</h2>
                 <div class="title-bar"></div>
             </div>
@@ -151,8 +155,67 @@
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section class="section" id="projects">
+    <!-- Live Interactive Visual Models Section -->
+    <section class="section" id="analytics-dash">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Interactive Quantitative Models</span>
+                <h2 class="section-title">Live Analytical Dashboards</h2>
+                <p class="section-subtitle">Real model outputs rendered live in browser from project backtests and credit scoring algorithms.</p>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="charts-grid">
+                <!-- Chart 1: Forex Cumulative Strategy Performance -->
+                <div class="chart-card glass">
+                    <div class="chart-header">
+                        <div>
+                            <span class="project-badge badge-cyan">Quant Finance</span>
+                            <h3>Forex Dual SMA Trend Strategy vs Benchmark</h3>
+                        </div>
+                        <span class="chart-metric">Sharpe: 0.84</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="forexChart"></canvas>
+                    </div>
+                    <p class="chart-footer"><i class="fa-solid fa-circle-info"></i> Backtested on 5,000+ daily Federal Reserve EUR/USD exchange rate observations.</p>
+                </div>
+
+                <!-- Chart 2: Credit Bankruptcy ROC-AUC Curve -->
+                <div class="chart-card glass">
+                    <div class="chart-header">
+                        <div>
+                            <span class="project-badge badge-gold">Credit Risk</span>
+                            <h3>Credit Bankruptcy Discrimination (ROC-AUC)</h3>
+                        </div>
+                        <span class="chart-metric">ROC-AUC: 0.940</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="rocChart"></canvas>
+                    </div>
+                    <p class="chart-footer"><i class="fa-solid fa-circle-info"></i> Evaluated on 6,819 corporate balance sheets with asymmetric dollar write-off penalties.</p>
+                </div>
+
+                <!-- Chart 3: Workforce Retention Radar Breakdown -->
+                <div class="chart-card glass">
+                    <div class="chart-header">
+                        <div>
+                            <span class="project-badge badge-blue">People Analytics</span>
+                            <h3>Workforce Retention Risk Factor Breakdown</h3>
+                        </div>
+                        <span class="chart-metric">F-Stat: 810.2</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                    <p class="chart-footer"><i class="fa-solid fa-circle-info"></i> Derived from IBM HR Analytics dataset highlighting overtime impact (Chi-Square p < 0.001).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section with Interactive Category Filter -->
+    <section class="section bg-alt" id="projects">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Portfolio Repositories</span>
@@ -161,9 +224,17 @@
                 <div class="title-bar"></div>
             </div>
 
+            <!-- Project Category Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects (6)</button>
+                <button class="filter-btn" data-filter="quant">Quantitative Finance (2)</button>
+                <button class="filter-btn" data-filter="risk">Risk & Audit (2)</button>
+                <button class="filter-btn" data-filter="ml">Data Science & NLP (2)</button>
+            </div>
+
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card glass">
+                <div class="project-card glass" data-category="ml">
                     <div class="project-header">
                         <span class="project-badge badge-blue">People Analytics</span>
                         <div class="project-links">
@@ -183,7 +254,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card glass">
+                <div class="project-card glass" data-category="ml">
                     <div class="project-header">
                         <span class="project-badge badge-purple">NLP & Sentiment</span>
                         <div class="project-links">
@@ -203,7 +274,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card glass">
+                <div class="project-card glass" data-category="risk">
                     <div class="project-header">
                         <span class="project-badge badge-red">Forensic Audit</span>
                         <div class="project-links">
@@ -223,7 +294,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card glass">
+                <div class="project-card glass" data-category="quant">
                     <div class="project-header">
                         <span class="project-badge badge-green">Financial Modeling</span>
                         <div class="project-links">
@@ -243,7 +314,7 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="project-card glass">
+                <div class="project-card glass" data-category="risk">
                     <div class="project-header">
                         <span class="project-badge badge-gold">Credit Risk</span>
                         <div class="project-links">
@@ -263,7 +334,7 @@
                 </div>
 
                 <!-- Project 6 -->
-                <div class="project-card glass">
+                <div class="project-card glass" data-category="quant">
                     <div class="project-header">
                         <span class="project-badge badge-cyan">Quant Finance</span>
                         <div class="project-links">
@@ -285,16 +356,18 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="section bg-alt" id="certifications">
+    <!-- Complete 17+ Certifications Section -->
+    <section class="section" id="certifications">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Verified Credentials</span>
+                <span class="section-tag">Verified Credentials Catalog</span>
                 <h2 class="section-title">17+ Professional Certifications</h2>
+                <p class="section-subtitle">Authenticated specializations across Data Science, Financial Econometrics, Forensic Accounting, and Global Trading.</p>
                 <div class="title-bar"></div>
             </div>
 
             <div class="certs-grid">
+                <!-- Group 1: Data Science & AI -->
                 <div class="cert-item glass">
                     <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="cert-content">
@@ -305,50 +378,115 @@
                 <div class="cert-item glass">
                     <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="cert-content">
-                        <h4>Data Science Professional</h4>
+                        <h4>Data Science Professional Certificate</h4>
                         <p class="cert-issuer">IBM</p>
                     </div>
                 </div>
                 <div class="cert-item glass">
                     <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="cert-content">
-                        <h4>Statistics with Python</h4>
+                        <h4>Statistics with Python Specialization</h4>
                         <p class="cert-issuer">University of Michigan</p>
                     </div>
                 </div>
                 <div class="cert-item glass">
                     <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="cert-content">
-                        <h4>Advanced Data Analytics</h4>
+                        <h4>Advanced Data Analytics Professional</h4>
                         <p class="cert-issuer">Google</p>
                     </div>
                 </div>
                 <div class="cert-item glass">
                     <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="cert-content">
+                        <h4>Python for Applied Data Science & AI</h4>
+                        <p class="cert-issuer">IBM</p>
+                    </div>
+                </div>
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-content">
+                        <h4>Databases and SQL for Data Science</h4>
+                        <p class="cert-issuer">IBM</p>
+                    </div>
+                </div>
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-content">
+                        <h4>Data Analysis with Python & Pandas</h4>
+                        <p class="cert-issuer">IBM</p>
+                    </div>
+                </div>
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-content">
+                        <h4>Machine Learning with Python</h4>
+                        <p class="cert-issuer">IBM</p>
+                    </div>
+                </div>
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-content">
+                        <h4>Regression Analysis & Statistical Modeling</h4>
+                        <p class="cert-issuer">Google</p>
+                    </div>
+                </div>
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-content">
+                        <h4>Fitting Statistical Models to Data</h4>
+                        <p class="cert-issuer">University of Michigan</p>
+                    </div>
+                </div>
+
+                <!-- Group 2: Finance, Accounting & Trading -->
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <div class="cert-content">
                         <h4>Forensic Accounting & Fraud Auditing</h4>
                         <p class="cert-issuer">EDUCBA</p>
                     </div>
                 </div>
                 <div class="cert-item glass">
-                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                     <div class="cert-content">
-                        <h4>Financial Modeling & Valuation (WACC)</h4>
+                        <h4>Financial Modeling & Valuation (WACC & DCF)</h4>
                         <p class="cert-issuer">Coursera</p>
                     </div>
                 </div>
                 <div class="cert-item glass">
-                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <div class="cert-content">
-                        <h4>Equities, Bonds & Derivatives Trading</h4>
+                        <h4>Equities Trading & Market Microstructure</h4>
+                        <p class="cert-issuer">Interactive Brokers (IBKR)</p>
+                    </div>
+                </div>
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="cert-content">
+                        <h4>Fixed Income, Yield Curves & Bond Pricing</h4>
+                        <p class="cert-issuer">Interactive Brokers (IBKR)</p>
+                    </div>
+                </div>
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="cert-content">
+                        <h4>Derivatives & Options Trading Strategies</h4>
+                        <p class="cert-issuer">Interactive Brokers (IBKR)</p>
+                    </div>
+                </div>
+                <div class="cert-item glass">
+                    <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="cert-content">
+                        <h4>Foreign Exchange (FX) Currency Markets</h4>
                         <p class="cert-issuer">Interactive Brokers (IBKR)</p>
                     </div>
                 </div>
                 <div class="cert-item glass">
                     <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="cert-content">
-                        <h4>Forex Currency Trading Concepts</h4>
-                        <p class="cert-issuer">Interactive Brokers (IBKR)</p>
+                        <h4>Foundations of Data Science</h4>
+                        <p class="cert-issuer">Google</p>
                     </div>
                 </div>
             </div>
@@ -356,10 +494,10 @@
     </section>
 
     <!-- Technical Skills Section -->
-    <section class="section" id="skills">
+    <section class="section bg-alt" id="skills">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Competencies</span>
+                <span class="section-tag">Competencies Matrix</span>
                 <h2 class="section-title">Technical & Financial Stack</h2>
                 <div class="title-bar"></div>
             </div>
@@ -368,35 +506,35 @@
                 <div class="skill-category glass">
                     <h3><i class="fa-solid fa-calculator"></i> Quantitative & Financial</h3>
                     <ul class="skill-list">
-                        <li>Financial Statement Modeling (IFRS)</li>
-                        <li>Cash Flow Valuation & WACC</li>
-                        <li>Credit Risk & Insolvency Scoring</li>
-                        <li>Forensic Accounting & Anomaly Audits</li>
-                        <li>Time-Series Econometrics (ADF, Holt-Winters)</li>
-                        <li>Algorithmic Backtesting (Sharpe Ratio, MDD)</li>
+                        <li>Financial Statement Modeling (IFRS Standards)</li>
+                        <li>Cash Flow Valuation & Discounted Cash Flow (DCF / WACC)</li>
+                        <li>Credit Risk Scoring & Insolvency Modeling (TEJ 95 Ratios)</li>
+                        <li>Forensic Accounting, Benford's Law & Anomaly Audits</li>
+                        <li>Time-Series Econometrics (ADF Test, Holt-Winters Smoothing)</li>
+                        <li>Algorithmic Strategy Backtesting (Sharpe Ratio, Max Drawdown)</li>
                     </ul>
                 </div>
 
                 <div class="skill-category glass">
                     <h3><i class="fa-brands fa-python"></i> Data Science & Machine Learning</h3>
                     <ul class="skill-list">
-                        <li>Python (Pandas, NumPy, Scikit-Learn)</li>
-                        <li>Statistical Hypothesis Testing (ANOVA, Chi-Square, Mann-Whitney)</li>
-                        <li>Unsupervised Outlier Detection (Isolation Forest, PCA)</li>
-                        <li>Natural Language Processing (TF-IDF, Tokenization)</li>
-                        <li>Data Visualization (Matplotlib, Seaborn)</li>
-                        <li>Imbalanced Class Modeling & Cost Matrix Tuning</li>
+                        <li>Python (Pandas, NumPy, Scikit-Learn, Statsmodels)</li>
+                        <li>Statistical Hypothesis Testing (ANOVA, Chi-Square, Mann-Whitney U)</li>
+                        <li>Unsupervised Outlier Detection (Isolation Forest, PCA Projections)</li>
+                        <li>Natural Language Processing (TF-IDF, Tokenization, L2 Reg)</li>
+                        <li>Data Visualization & Storytelling (Matplotlib, Seaborn, Chart.js)</li>
+                        <li>Imbalanced Class Modeling & Asymmetric Cost Matrix Tuning</li>
                     </ul>
                 </div>
 
                 <div class="skill-category glass">
                     <h3><i class="fa-solid fa-database"></i> Tools & Database Systems</h3>
                     <ul class="skill-list">
-                        <li>SQL (PostgreSQL, MySQL Querying & Aggregations)</li>
-                        <li>Advanced Excel (VLOOKUP, Pivot Tables, Macros)</li>
-                        <li>Git & GitHub Version Control</li>
-                        <li>Kaggle Notebooks & Datasets</li>
-                        <li>Jupyter Lab & Linux Environments</li>
+                        <li>SQL (PostgreSQL, MySQL Querying, Window Functions & CTEs)</li>
+                        <li>Advanced Financial Excel (Pivot Tables, VLOOKUP, INDEX/MATCH)</li>
+                        <li>Git & GitHub Version Control & Workflow Management</li>
+                        <li>Kaggle Public Notebooks & Datasets Publishing</li>
+                        <li>Jupyter Lab, Virtual Environments & Linux Tooling</li>
                     </ul>
                 </div>
             </div>
@@ -404,7 +542,7 @@
     </section>
 
     <!-- Contact & Footer Section -->
-    <section class="section bg-alt" id="contact">
+    <section class="section" id="contact">
         <div class="container contact-container">
             <div class="section-header">
                 <span class="section-tag">Get In Touch</span>
@@ -416,23 +554,23 @@
             <div class="contact-cards">
                 <a href="mailto:ahmedn4474@gmail.com" class="contact-card glass">
                     <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                    <h4>Email</h4>
+                    <h4>Direct Email</h4>
                     <p>ahmedn4474@gmail.com</p>
                 </a>
                 <a href="https://github.com/ahmedn4474-art" target="_blank" class="contact-card glass">
                     <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
-                    <h4>GitHub</h4>
+                    <h4>GitHub Repositories</h4>
                     <p>@ahmedn4474-art</p>
                 </a>
                 <a href="https://kaggle.com/ahmednoureldin4474" target="_blank" class="contact-card glass">
                     <div class="contact-icon"><i class="fa-brands fa-kaggle"></i></div>
-                    <h4>Kaggle</h4>
+                    <h4>Kaggle Notebooks</h4>
                     <p>@ahmednoureldin4474</p>
                 </a>
             </div>
 
             <footer class="footer">
-                <p>© 2026 Ahmed Noureldin Mohamed. Built with pure modern HTML5, CSS3 & JavaScript.</p>
+                <p>© 2026 Ahmed Noureldin Mohamed. Built with pure modern HTML5, CSS3, JavaScript & Chart.js.</p>
             </footer>
         </div>
     </section>
