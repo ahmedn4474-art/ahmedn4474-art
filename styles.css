@@ -698,11 +698,107 @@ h1, h2, h3, h4 {
     font-size: 0.88rem;
 }
 
-.footer {
-    padding-top: 28px;
-    border-top: 1px solid var(--border-light);
+/* Resume Showcase Section */
+.resume-showcase {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 36px 40px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: var(--radius-lg);
+    background: rgba(16, 22, 38, 0.85);
+}
+.resume-showcase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 24px;
+}
+.resume-badge {
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--accent-green);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.resume-actions-top {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.resume-showcase-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-bottom: 30px;
+}
+.resume-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.resume-mini-section h4 {
+    font-size: 1rem;
+    color: var(--gold-bright);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.resume-text-bold {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.94rem;
+}
+.resume-text-muted {
+    font-size: 0.84rem;
+    color: var(--gold-primary);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.resume-text-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+.resume-bullets {
+    list-style: none;
+}
+.resume-bullets li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 5px 0;
+    position: relative;
+    padding-left: 14px;
+}
+.resume-bullets li::before {
+    content: "▹";
+    color: var(--gold-primary);
+    position: absolute;
+    left: 0;
+}
+.resume-showcase-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.resume-showcase-footer p {
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: 0.86rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 /* Responsive Breakpoints */
@@ -728,3 +824,4 @@ h1, h2, h3, h4 {
         border-bottom: 1px solid var(--border-card);
     }
 }
+
