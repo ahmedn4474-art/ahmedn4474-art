@@ -347,6 +347,7 @@ h1, h2, h3, h4 {
     padding: 90px 0;
     position: relative;
     z-index: 1;
+    scroll-margin-top: 70px;
 }
 .bg-alt {
     background-color: var(--bg-surface);
