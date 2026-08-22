@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Noureldin Mohamed - ATS Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <title>Ahmed Noureldin Mohamed - CV / Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0f172a;
+            --primary: #0b132b;
+            --primary-light: #1c2541;
             --accent: #b45309;
-            --accent-blue: #0369a1;
-            --text-dark: #1e293b;
-            --text-muted: #475569;
+            --accent-blue: #0284c7;
+            --text-dark: #0f172a;
+            --text-muted: #334155;
             --border: #cbd5e1;
-            --bg-light: #f8fafc;
+            --border-light: #e2e8f0;
+            --bg-page: #f1f5f9;
         }
 
         * {
@@ -26,22 +28,22 @@
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--text-dark);
-            background: #e2e8f0;
+            background: var(--bg-page);
             line-height: 1.5;
             padding: 30px 15px;
         }
 
         .resume-container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 45px 50px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-radius: 4px;
+            padding: 45px 55px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 6px;
         }
 
         .print-btn-bar {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto 20px;
             display: flex;
             justify-content: space-between;
@@ -51,7 +53,7 @@
         .btn-print {
             background: var(--primary);
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border: none;
             border-radius: 6px;
             font-weight: 700;
@@ -60,11 +62,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            text-decoration: none;
-            transition: background 0.2s;
+            transition: all 0.2s;
         }
         .btn-print:hover {
-            background: #1e293b;
+            background: var(--accent);
+            transform: translateY(-1px);
         }
         .btn-back {
             color: var(--accent-blue);
@@ -75,35 +77,35 @@
             gap: 6px;
         }
 
-        /* Resume Header */
+        /* Header */
         .resume-header {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 16px;
-            margin-bottom: 20px;
+            border-bottom: 2.5px solid var(--primary);
+            padding-bottom: 18px;
+            margin-bottom: 22px;
         }
         .name {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 800;
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: -0.5px;
         }
         .job-title {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent);
             margin-top: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .contact-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 16px;
             font-size: 0.88rem;
             color: var(--text-muted);
         }
         .contact-links a {
-            color: var(--text-dark);
+            color: var(--primary-light);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -114,9 +116,9 @@
             color: var(--accent-blue);
         }
 
-        /* Section Common */
+        /* Sections */
         .resume-section {
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
         .section-title {
             font-size: 1.05rem;
@@ -126,21 +128,26 @@
             letter-spacing: 0.8px;
             border-bottom: 1.5px solid var(--border);
             padding-bottom: 4px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+        .section-title i {
+            color: var(--accent);
+            font-size: 0.95rem;
         }
 
         .summary-text {
             font-size: 0.92rem;
             color: var(--text-dark);
             line-height: 1.6;
+            text-align: justify;
         }
 
-        /* Work Experience & Education */
+        /* Experience & Education */
         .item-block {
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
         .item-header {
             display: flex;
@@ -149,7 +156,7 @@
             margin-bottom: 3px;
         }
         .item-role {
-            font-size: 0.98rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--primary);
         }
@@ -176,22 +183,22 @@
             color: var(--text-dark);
         }
         .item-bullets li {
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             line-height: 1.45;
         }
 
         /* Projects */
         .project-block {
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
         .project-title-row {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
         .project-name {
-            font-size: 0.96rem;
+            font-size: 0.98rem;
             font-weight: 700;
             color: var(--primary);
         }
@@ -204,52 +211,81 @@
         .project-desc {
             font-size: 0.88rem;
             color: var(--text-dark);
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             line-height: 1.45;
         }
         .project-links-row {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             margin-bottom: 4px;
         }
         .project-links-row a {
             color: var(--accent-blue);
             font-weight: 600;
             text-decoration: none;
-            margin-right: 12px;
+            margin-right: 14px;
         }
 
-        /* Skills */
+        /* Skills Matrix */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px 16px;
+            gap: 10px 20px;
             font-size: 0.88rem;
-        }
-        .skill-group {
-            line-height: 1.5;
         }
         .skill-group strong {
             color: var(--primary);
+            display: block;
+            margin-bottom: 2px;
         }
 
-        /* Certifications */
-        .cert-list {
+        /* Certifications Comprehensive Table / List */
+        .certs-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5px 16px;
-            font-size: 0.84rem;
-            list-style: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
         }
-        .cert-list li {
+        .cert-category-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 14px 16px;
+        }
+        .cert-cat-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+        }
+        .cert-cat-title i {
+            color: var(--accent);
+        }
+        .cert-items-list {
+            list-style: none;
+            font-size: 0.82rem;
+        }
+        .cert-items-list li {
             position: relative;
             padding-left: 14px;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            color: var(--text-dark);
         }
-        .cert-list li::before {
+        .cert-items-list li::before {
             content: "•";
             color: var(--accent);
             position: absolute;
             left: 0;
             font-weight: bold;
+            font-size: 1rem;
+        }
+        .cert-issuer-tag {
+            font-weight: 700;
+            color: var(--accent-blue);
         }
 
         @media print {
@@ -262,7 +298,7 @@
             }
             .resume-container {
                 box-shadow: none;
-                padding: 20px 25px;
+                padding: 15px 20px;
                 max-width: 100%;
             }
             a {
@@ -283,13 +319,13 @@
         <!-- Header -->
         <header class="resume-header">
             <h1 class="name">Ahmed Noureldin Mohamed</h1>
-            <div class="job-title">Financial Data Analyst & Quantitative Risk Modeler</div>
+            <div class="job-title">Financial Data Analyst · Quantitative & Risk Modeler</div>
             <div class="contact-links">
-                <span><i class="fa-solid fa-location-dot"></i> Cairo, Egypt (Open to Remote Worldwide)</span>
+                <span><i class="fa-solid fa-location-dot"></i> Cairo, Egypt (Available for Worldwide Remote)</span>
                 <a href="mailto:ahmedn4474@gmail.com"><i class="fa-solid fa-envelope"></i> ahmedn4474@gmail.com</a>
                 <a href="https://ahmedn4474-art.github.io/ahmedn4474-art/" target="_blank"><i class="fa-solid fa-globe"></i> Live Portfolio</a>
                 <a href="https://github.com/ahmedn4474-art" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="https://kaggle.com/ahmednoureldin4474" target="_blank"><i class="fa-brands fa-kaggle"></i> Kaggle Master</a>
+                <a href="https://kaggle.com/ahmednoureldin4474" target="_blank"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
             </div>
         </header>
 
@@ -297,13 +333,13 @@
         <section class="resume-section">
             <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Professional Summary</h2>
             <p class="summary-text">
-                Financial Data Analyst and Quantitative Modeler with a strong foundation in Accounting & Financial Sciences. Proven track record in developing institutional-grade machine learning pipelines, credit insolvency scoring models (0.94 ROC-AUC), algorithmic trading systems, and forensic audit anomaly detection. Ex-Data Analytics Intern at Commercial International Bank (CIB), combining deep financial statement domain expertise with advanced Python, SQL, statistical modeling, and time-series forecasting to generate actionable business intelligence and mitigate capital risk.
+                Financial Data Analyst & Quantitative Modeler with a strong academic foundation in Accounting & Financial Sciences and verified enterprise experience from Commercial International Bank (CIB). Backed by 17+ industry certifications from DeepLearning.AI, IBM, University of Michigan, Google, and Interactive Brokers. Proven expertise in building production-ready credit insolvency scoring pipelines (0.9403 ROC-AUC with cost-matrix optimization), multi-decade algorithmic trading backtesting systems, forensic audit anomaly detection (Isolation Forest), and automated time-series cash flow forecasting models. Combines deep financial statement acumen with advanced Python, SQL, and statistical rigor to drive data-driven financial decision-making and minimize enterprise risk.
             </p>
         </section>
 
         <!-- Work Experience -->
         <section class="resume-section">
-            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
             <div class="item-block">
                 <div class="item-header">
                     <div><span class="item-role">Data Analytics Intern</span> — <span class="item-company">Commercial International Bank (CIB), Egypt</span></div>
@@ -311,9 +347,9 @@
                 </div>
                 <div class="item-sub">Data & Analytics Division · Cairo, Egypt</div>
                 <ul class="item-bullets">
-                    <li>Conducted exploratory data analysis and statistical validation across large-scale financial banking transactions to uncover operational risk drivers and customer segment behaviors.</li>
-                    <li>Built automated SQL data aggregation pipelines and structured analytical reports supporting internal audit and managerial decision-making.</li>
-                    <li>Evaluated data quality frameworks and engineered structured reporting dashboards that streamlined data ingestion and KPI tracking.</li>
+                    <li>Conducted statistical exploratory data analysis across high-volume banking transactions to identify operational risk drivers, anomalous transaction patterns, and segment behaviors.</li>
+                    <li>Engineered automated SQL aggregation pipelines and structured data extraction workflows supporting internal audit and management reporting.</li>
+                    <li>Designed structured data quality validation routines and executive dashboards that improved data ingestion consistency and accelerated KPI reporting.</li>
                 </ul>
             </div>
         </section>
@@ -327,23 +363,23 @@
                     <span class="item-date">2023 – Expected 2027</span>
                 </div>
                 <div class="item-sub">New Cairo Higher Institute for Administrative Sciences & Technology · Cairo, Egypt</div>
-                <div class="item-bullets">
-                    <li><strong>Key Coursework:</strong> Financial Accounting, Corporate Finance, Auditing & Internal Control, Cost Accounting, Financial Statement Analysis, Econometrics & Statistics.</li>
-                </div>
+                <ul class="item-bullets">
+                    <li><strong>Key Core Focus:</strong> Financial Accounting, Corporate Finance, Auditing & Internal Control Systems, Financial Statement Analysis, Cost Accounting, Quantitative Business Statistics & Econometrics.</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Core Projects -->
+        <!-- Verified Projects -->
         <section class="resume-section">
-            <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Quantitative & Financial Analytics Projects</h2>
+            <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Featured Quantitative & Financial Projects</h2>
             
             <div class="project-block">
                 <div class="project-title-row">
-                    <span class="project-name">1. Corporate Bankruptcy & Insolvency Risk Prediction</span>
-                    <span class="project-tools">Python, Scikit-Learn, ROC-AUC (0.940), Cost Matrix</span>
+                    <span class="project-name">1. Corporate Bankruptcy & Credit Risk Prediction</span>
+                    <span class="project-tools">Python · Scikit-Learn · ROC-AUC (0.9403) · Cost Matrix Optimization</span>
                 </div>
                 <p class="project-desc">
-                    Engineered an asymmetric risk-sensitive classification pipeline evaluating 96 fundamental financial ratios. Implemented an operational cost-matrix threshold (0.31 cutoff) penalizing false negatives at 20:1 ($100k bankruptcy loss vs $5k false alarm), achieving 0.9403 ROC-AUC on real-world industrial distress data.
+                    Engineered an asymmetric risk-sensitive machine learning pipeline analyzing 96 fundamental financial ratios. Tuned decision boundaries with an operational cost-matrix threshold (0.31 cutoff) penalizing false negatives at 20:1 ($100k bankruptcy loss vs $5k false alarm), achieving 0.9403 ROC-AUC on industrial distress data.
                 </p>
                 <div class="project-links-row">
                     <a href="https://github.com/ahmedn4474-art/Corporate-Bankruptcy-Prediction" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
@@ -354,10 +390,10 @@
             <div class="project-block">
                 <div class="project-title-row">
                     <span class="project-name">2. Forex Algorithmic Trading & Time-Series Quantitative Strategy</span>
-                    <span class="project-tools">Python, Time-Series, Dual SMA (50/200), Bollinger Bands</span>
+                    <span class="project-tools">Python · Dual SMA 50/200 · Bollinger Bands · Backtesting</span>
                 </div>
                 <p class="project-desc">
-                    Developed and backtested quantitative multi-regime trading strategies across 20+ years of EUR/USD tick/daily data. Integrated trend-following golden cross systems with dynamic volatility-adjusted Bollinger Band breakout rules, outperforming standard buy-and-hold benchmarks with strict drawdown controls.
+                    Constructed and backtested quantitative multi-regime trading strategies across 20+ years of EUR/USD tick & daily price data. Combined trend-following golden cross logic with dynamic volatility-adjusted Bollinger Band breakout rules, outperforming standard buy-and-hold benchmarks with strict drawdown controls.
                 </p>
                 <div class="project-links-row">
                     <a href="https://github.com/ahmedn4474-art/Forex-Trading-System" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
@@ -367,8 +403,8 @@
 
             <div class="project-block">
                 <div class="project-title-row">
-                    <span class="project-name">3. Internal Audit Anomaly Detection & Fraud Risk Classification</span>
-                    <span class="project-tools">Isolation Forest, Random Forest, Forensic Accounting</span>
+                    <span class="project-name">3. Internal Audit Anomaly Detection & Fraud Classification</span>
+                    <span class="project-tools">Isolation Forest · Random Forest · Forensic Accounting</span>
                 </div>
                 <p class="project-desc">
                     Architected an unsupervised anomaly detection framework utilizing Isolation Forest paired with supervised Random Forest risk scoring on enterprise audit records, isolating high-risk fraudulent ledger entries and control bypass anomalies.
@@ -382,7 +418,7 @@
             <div class="project-block">
                 <div class="project-title-row">
                     <span class="project-name">4. Financial Accounting Ledger & Cash Flow Time-Series Analytics</span>
-                    <span class="project-tools">Pandas, Statsmodels, Holt-Winters, ADF Stationarity</span>
+                    <span class="project-tools">Pandas · Statsmodels · Holt-Winters · ADF Stationarity</span>
                 </div>
                 <p class="project-desc">
                     Processed 100,000+ general ledger entries to construct automated financial statements (Balance Sheet, P&L, Cash Flow). Applied Augmented Dickey-Fuller (ADF) stationarity testing and Holt-Winters exponential smoothing for seasonal liquidity forecasting.
@@ -394,36 +430,65 @@
             </div>
         </section>
 
-        <!-- Technical & Financial Skills -->
+        <!-- Technical & Financial Skills Matrix -->
         <section class="resume-section">
-            <h2 class="section-title"><i class="fa-solid fa-gears"></i> Technical & Domain Skills</h2>
+            <h2 class="section-title"><i class="fa-solid fa-gears"></i> Technical & Domain Core Competencies</h2>
             <div class="skills-grid">
                 <div class="skill-group">
-                    <strong>Programming & Data:</strong> Python (Pandas, NumPy, Scikit-Learn, SciPy, Statsmodels), SQL, Data Wrangling, Pipeline Design.
+                    <strong>Programming & Data Wrangling:</strong>
+                    Python (Pandas, NumPy, Scikit-Learn, SciPy, Statsmodels), SQL (Complex queries, Aggregations, Window Functions), Pipeline Design.
                 </div>
                 <div class="skill-group">
-                    <strong>Financial & Risk Modeling:</strong> Credit Scoring, Cash Flow Modeling, Cost Matrix Optimization, Asymmetric Loss Functions.
+                    <strong>Financial & Risk Modeling:</strong>
+                    Credit Scoring, Asymmetric Cost-Matrix Loss Functions, Cash Flow Forecasting, Liquidity Analysis, Financial Statement Reconstruction.
                 </div>
                 <div class="skill-group">
-                    <strong>Quantitative & Time-Series:</strong> Backtesting, SMA/EMA Strategies, Bollinger Bands, Holt-Winters, ARIMA, ADF Tests.
+                    <strong>Quantitative & Time-Series:</strong>
+                    Backtesting Engines, Dual SMA/EMA Systems, Bollinger Bands, Holt-Winters Exponential Smoothing, ADF Stationarity Tests, ROC-AUC/PR-AUC.
                 </div>
                 <div class="skill-group">
-                    <strong>Accounting & Audit:</strong> Forensic Ledger Analysis, Financial Statements (P&L, Balance Sheet), Internal Controls, Anomaly Detection.
+                    <strong>Accounting & Audit Domain:</strong>
+                    Forensic Ledger Analysis, P&L and Balance Sheet Modeling, Internal Control Risk Assessment, Fraud Detection, Ratio Analysis.
                 </div>
             </div>
         </section>
 
-        <!-- Certifications -->
+        <!-- 17+ Verified Certifications Catalog -->
         <section class="resume-section">
-            <h2 class="section-title"><i class="fa-solid fa-award"></i> Selected Professional Certifications (17+ Verified)</h2>
-            <ul class="cert-list">
-                <li><strong>IBM:</strong> Applied Data Science Specialization & Python for Data Science</li>
-                <li><strong>DeepLearning.AI:</strong> Machine Learning Specialization (Supervised & Unsupervised)</li>
-                <li><strong>Interactive Brokers (IBKR):</strong> Quantitative Finance & Algorithmic Trading Course</li>
-                <li><strong>Univ. of Michigan:</strong> Applied Data Science with Python Specialization</li>
-                <li><strong>Google:</strong> Advanced Data Analytics Professional Certificate</li>
-                <li><strong>EDUCBA:</strong> Financial Modeling & Valuation Masterclass</li>
-            </ul>
+            <h2 class="section-title"><i class="fa-solid fa-award"></i> Professional Certifications Catalog (17+ Verified Credentials)</h2>
+            <div class="certs-container">
+                <!-- Group 1: Machine Learning & Data Science -->
+                <div class="cert-category-box">
+                    <div class="cert-cat-title"><i class="fa-solid fa-brain"></i> Machine Learning & Data Science</div>
+                    <ul class="cert-items-list">
+                        <li><span class="cert-issuer-tag">DeepLearning.AI:</span> Supervised Machine Learning: Regression and Classification</li>
+                        <li><span class="cert-issuer-tag">DeepLearning.AI:</span> Advanced Learning Algorithms (Neural Networks & Trees)</li>
+                        <li><span class="cert-issuer-tag">DeepLearning.AI:</span> Unsupervised Learning, Recommenders, Reinforcement Learning</li>
+                        <li><span class="cert-issuer-tag">IBM:</span> Applied Data Science Specialization (5-Course Professional Track)</li>
+                        <li><span class="cert-issuer-tag">IBM:</span> Python for Data Science, AI & Development</li>
+                        <li><span class="cert-issuer-tag">IBM:</span> Data Analysis with Python (Pandas & Scipy)</li>
+                        <li><span class="cert-issuer-tag">IBM:</span> Data Visualization with Python (Matplotlib & Seaborn)</li>
+                        <li><span class="cert-issuer-tag">Univ. of Michigan:</span> Applied Data Science with Python Specialization</li>
+                        <li><span class="cert-issuer-tag">Univ. of Michigan:</span> Introduction to Data Science in Python</li>
+                        <li><span class="cert-issuer-tag">Univ. of Michigan:</span> Applied Plotting, Charting & Data Representation</li>
+                    </ul>
+                </div>
+
+                <!-- Group 2: Quantitative Finance, Analytics & Auditing -->
+                <div class="cert-category-box">
+                    <div class="cert-cat-title"><i class="fa-solid fa-coins"></i> Quant Finance, Analytics & Audit</div>
+                    <ul class="cert-items-list">
+                        <li><span class="cert-issuer-tag">Interactive Brokers (IBKR):</span> Quantitative Finance & Algorithmic Trading with Python</li>
+                        <li><span class="cert-issuer-tag">Google:</span> Advanced Data Analytics Professional Certificate</li>
+                        <li><span class="cert-issuer-tag">Google:</span> Foundations of Data Science</li>
+                        <li><span class="cert-issuer-tag">Google:</span> Ask Questions to Make Data-Driven Decisions</li>
+                        <li><span class="cert-issuer-tag">Google:</span> Prepare Data for Exploration</li>
+                        <li><span class="cert-issuer-tag">Google:</span> Process Data from Dirty to Clean</li>
+                        <li><span class="cert-issuer-tag">EDUCBA:</span> Financial Modeling & Valuation Masterclass</li>
+                        <li><span class="cert-issuer-tag">EDUCBA:</span> Forensic Accounting & Fraud Auditing Certification</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </div>
 
