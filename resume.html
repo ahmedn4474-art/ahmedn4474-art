@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Noureldin Mohamed - ATS Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #b45309;
+            --accent-blue: #0369a1;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
+            --border: #cbd5e1;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            background: #e2e8f0;
+            line-height: 1.5;
+            padding: 30px 15px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 45px 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+
+        .print-btn-bar {
+            max-width: 850px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-print {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn-print:hover {
+            background: #1e293b;
+        }
+        .btn-back {
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Resume Header */
+        .resume-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        .name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        .job-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 2px;
+            margin-bottom: 10px;
+        }
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+        .contact-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .contact-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Section Common */
+        .resume-section {
+            margin-bottom: 22px;
+        }
+        .section-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-text {
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Work Experience & Education */
+        .item-block {
+            margin-bottom: 14px;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+        .item-role {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .item-company {
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
+        .item-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .item-sub {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+        .item-bullets {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+        }
+        .item-bullets li {
+            margin-bottom: 4px;
+            line-height: 1.45;
+        }
+
+        /* Projects */
+        .project-block {
+            margin-bottom: 12px;
+        }
+        .project-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+        .project-name {
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .project-tools {
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .project-desc {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+            line-height: 1.45;
+        }
+        .project-links-row {
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+        }
+        .project-links-row a {
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 12px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 16px;
+            font-size: 0.88rem;
+        }
+        .skill-group {
+            line-height: 1.5;
+        }
+        .skill-group strong {
+            color: var(--primary);
+        }
+
+        /* Certifications */
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px 16px;
+            font-size: 0.84rem;
+            list-style: none;
+        }
+        .cert-list li {
+            position: relative;
+            padding-left: 14px;
+        }
+        .cert-list li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+            .print-btn-bar {
+                display: none !important;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 20px 25px;
+                max-width: 100%;
+            }
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-btn-bar">
+        <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Interactive Portfolio</a>
+        <button class="btn-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+    </div>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="resume-header">
+            <h1 class="name">Ahmed Noureldin Mohamed</h1>
+            <div class="job-title">Financial Data Analyst & Quantitative Risk Modeler</div>
+            <div class="contact-links">
+                <span><i class="fa-solid fa-location-dot"></i> Cairo, Egypt (Open to Remote Worldwide)</span>
+                <a href="mailto:ahmedn4474@gmail.com"><i class="fa-solid fa-envelope"></i> ahmedn4474@gmail.com</a>
+                <a href="https://ahmedn4474-art.github.io/ahmedn4474-art/" target="_blank"><i class="fa-solid fa-globe"></i> Live Portfolio</a>
+                <a href="https://github.com/ahmedn4474-art" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://kaggle.com/ahmednoureldin4474" target="_blank"><i class="fa-brands fa-kaggle"></i> Kaggle Master</a>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Professional Summary</h2>
+            <p class="summary-text">
+                Financial Data Analyst and Quantitative Modeler with a strong foundation in Accounting & Financial Sciences. Proven track record in developing institutional-grade machine learning pipelines, credit insolvency scoring models (0.94 ROC-AUC), algorithmic trading systems, and forensic audit anomaly detection. Ex-Data Analytics Intern at Commercial International Bank (CIB), combining deep financial statement domain expertise with advanced Python, SQL, statistical modeling, and time-series forecasting to generate actionable business intelligence and mitigate capital risk.
+            </p>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <div><span class="item-role">Data Analytics Intern</span> — <span class="item-company">Commercial International Bank (CIB), Egypt</span></div>
+                    <span class="item-date">July 2024 – August 2024</span>
+                </div>
+                <div class="item-sub">Data & Analytics Division · Cairo, Egypt</div>
+                <ul class="item-bullets">
+                    <li>Conducted exploratory data analysis and statistical validation across large-scale financial banking transactions to uncover operational risk drivers and customer segment behaviors.</li>
+                    <li>Built automated SQL data aggregation pipelines and structured analytical reports supporting internal audit and managerial decision-making.</li>
+                    <li>Evaluated data quality frameworks and engineered structured reporting dashboards that streamlined data ingestion and KPI tracking.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <div><span class="item-role">Bachelor of Accounting & Financial Sciences</span></div>
+                    <span class="item-date">2023 – Expected 2027</span>
+                </div>
+                <div class="item-sub">New Cairo Higher Institute for Administrative Sciences & Technology · Cairo, Egypt</div>
+                <div class="item-bullets">
+                    <li><strong>Key Coursework:</strong> Financial Accounting, Corporate Finance, Auditing & Internal Control, Cost Accounting, Financial Statement Analysis, Econometrics & Statistics.</li>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Projects -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Quantitative & Financial Analytics Projects</h2>
+            
+            <div class="project-block">
+                <div class="project-title-row">
+                    <span class="project-name">1. Corporate Bankruptcy & Insolvency Risk Prediction</span>
+                    <span class="project-tools">Python, Scikit-Learn, ROC-AUC (0.940), Cost Matrix</span>
+                </div>
+                <p class="project-desc">
+                    Engineered an asymmetric risk-sensitive classification pipeline evaluating 96 fundamental financial ratios. Implemented an operational cost-matrix threshold (0.31 cutoff) penalizing false negatives at 20:1 ($100k bankruptcy loss vs $5k false alarm), achieving 0.9403 ROC-AUC on real-world industrial distress data.
+                </p>
+                <div class="project-links-row">
+                    <a href="https://github.com/ahmedn4474-art/Corporate-Bankruptcy-Prediction" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                    <a href="https://www.kaggle.com/code/ahmednoureldin4474/corporate-bankruptcy-risk-prediction" target="_blank"><i class="fa-brands fa-kaggle"></i> Kaggle Verified</a>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-title-row">
+                    <span class="project-name">2. Forex Algorithmic Trading & Time-Series Quantitative Strategy</span>
+                    <span class="project-tools">Python, Time-Series, Dual SMA (50/200), Bollinger Bands</span>
+                </div>
+                <p class="project-desc">
+                    Developed and backtested quantitative multi-regime trading strategies across 20+ years of EUR/USD tick/daily data. Integrated trend-following golden cross systems with dynamic volatility-adjusted Bollinger Band breakout rules, outperforming standard buy-and-hold benchmarks with strict drawdown controls.
+                </p>
+                <div class="project-links-row">
+                    <a href="https://github.com/ahmedn4474-art/Forex-Trading-System" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                    <a href="https://www.kaggle.com/code/ahmednoureldin4474/forex-exchange-rates-algorithmic-trading" target="_blank"><i class="fa-brands fa-kaggle"></i> Kaggle Verified</a>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-title-row">
+                    <span class="project-name">3. Internal Audit Anomaly Detection & Fraud Risk Classification</span>
+                    <span class="project-tools">Isolation Forest, Random Forest, Forensic Accounting</span>
+                </div>
+                <p class="project-desc">
+                    Architected an unsupervised anomaly detection framework utilizing Isolation Forest paired with supervised Random Forest risk scoring on enterprise audit records, isolating high-risk fraudulent ledger entries and control bypass anomalies.
+                </p>
+                <div class="project-links-row">
+                    <a href="https://github.com/ahmedn4474-art/Audit-Risk-Model" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                    <a href="https://www.kaggle.com/code/ahmednoureldin4474/internal-audit-risk-anomaly-detection" target="_blank"><i class="fa-brands fa-kaggle"></i> Kaggle Verified</a>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-title-row">
+                    <span class="project-name">4. Financial Accounting Ledger & Cash Flow Time-Series Analytics</span>
+                    <span class="project-tools">Pandas, Statsmodels, Holt-Winters, ADF Stationarity</span>
+                </div>
+                <p class="project-desc">
+                    Processed 100,000+ general ledger entries to construct automated financial statements (Balance Sheet, P&L, Cash Flow). Applied Augmented Dickey-Fuller (ADF) stationarity testing and Holt-Winters exponential smoothing for seasonal liquidity forecasting.
+                </p>
+                <div class="project-links-row">
+                    <a href="https://github.com/ahmedn4474-art/Financial-Accounting-Ledger" target="_blank"><i class="fa-brands fa-github"></i> Repository</a>
+                    <a href="https://www.kaggle.com/code/ahmednoureldin4474/financial-accounting-and-cash-flow-analytics" target="_blank"><i class="fa-brands fa-kaggle"></i> Kaggle Verified</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical & Financial Skills -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-gears"></i> Technical & Domain Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <strong>Programming & Data:</strong> Python (Pandas, NumPy, Scikit-Learn, SciPy, Statsmodels), SQL, Data Wrangling, Pipeline Design.
+                </div>
+                <div class="skill-group">
+                    <strong>Financial & Risk Modeling:</strong> Credit Scoring, Cash Flow Modeling, Cost Matrix Optimization, Asymmetric Loss Functions.
+                </div>
+                <div class="skill-group">
+                    <strong>Quantitative & Time-Series:</strong> Backtesting, SMA/EMA Strategies, Bollinger Bands, Holt-Winters, ARIMA, ADF Tests.
+                </div>
+                <div class="skill-group">
+                    <strong>Accounting & Audit:</strong> Forensic Ledger Analysis, Financial Statements (P&L, Balance Sheet), Internal Controls, Anomaly Detection.
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="resume-section">
+            <h2 class="section-title"><i class="fa-solid fa-award"></i> Selected Professional Certifications (17+ Verified)</h2>
+            <ul class="cert-list">
+                <li><strong>IBM:</strong> Applied Data Science Specialization & Python for Data Science</li>
+                <li><strong>DeepLearning.AI:</strong> Machine Learning Specialization (Supervised & Unsupervised)</li>
+                <li><strong>Interactive Brokers (IBKR):</strong> Quantitative Finance & Algorithmic Trading Course</li>
+                <li><strong>Univ. of Michigan:</strong> Applied Data Science with Python Specialization</li>
+                <li><strong>Google:</strong> Advanced Data Analytics Professional Certificate</li>
+                <li><strong>EDUCBA:</strong> Financial Modeling & Valuation Masterclass</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
